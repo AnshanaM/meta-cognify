@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
+/*@font-face {
   font-family: Meditative;
   src: url('/Meditative.tff');
-} */
+}*/
 
 @font-face {
   font-family: Recoleta;
@@ -13,20 +13,21 @@
 }
 
 * {
-  background-color: black;
+  background-color: #01011B;
   color: rgb(238, 238, 238);
   font-family: Recoleta;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-bar {
   display: flex;
+  height: 7vh;
   flex-direction: row;
   justify-content: space-between;
-  border: solid 1px lime;
   margin: 1rem;
   justify-items: center;
 }
-
 
 .logo {
   height: fit-content;
@@ -34,9 +35,43 @@
   margin: 0;
 }
 
+.logo h1{
+  font-size: xx-large;
+}
+
 .button {
-  border: solid 1.5px rgb(238, 238, 238);
+  border: solid 2px rgb(238, 238, 238);
   padding: 0.25rem 0.75rem;
   border-radius: 30px;
 }
 
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  height: 93vh;
+}
+
+.text-section {
+  max-width: 50%;
+}
+
+.text-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.text-section p {
+  font-size: 1.25rem;
+}
+
+.image-section {
+  max-width: 45%;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
