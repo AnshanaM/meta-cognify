@@ -12,8 +12,11 @@
   src: url('/Recoleta-RegularDEMO.otf');
 }
 
-* {
+main, .nav-bar, body {
   background-color: #01011B;
+}
+
+* {
   color: rgb(238, 238, 238);
   font-family: Recoleta;
   padding: 0;
@@ -27,6 +30,7 @@
   justify-content: space-between;
   margin: 1rem;
   justify-items: center;
+  align-items: center;
 }
 
 .logo {
@@ -61,7 +65,7 @@ button:hover{
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  height: 93vh;
+  height: 80vh;
 }
 
 .text-section {
@@ -80,11 +84,25 @@ button:hover{
 }
 
 .image-section {
-  max-width: 45%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
 }
 
 .image-section img {
-  max-width: 100%;
+  width: 75%;
   height: auto;
   border-radius: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
