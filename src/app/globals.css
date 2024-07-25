@@ -23,16 +23,20 @@
   flex-direction: row;
   justify-content: space-between;
   border: solid 1px lime;
+  margin: 1rem;
+  justify-items: center;
 }
 
 
-/* .logo {
-  height: ;
-} */
+.logo {
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+}
 
 .button {
   border: solid 1.5px rgb(238, 238, 238);
   padding: 0.25rem 0.75rem;
-  border-radius: 5px;
+  border-radius: 30px;
 }
 
