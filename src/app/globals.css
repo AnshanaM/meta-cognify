@@ -39,11 +39,21 @@
   font-size: xx-large;
 }
 
-.button {
+button {
   border: solid 1.5px rgb(238, 238, 238);
   padding: 0.5rem 1rem;
   border-radius: 30px;
-  width: fit-content;
+  width:fit-content;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  background-color:#8D1F66;
+  color: white;
+}
+
+button:hover{
+  background-color:#5d1343;
 }
 
 .main-content {
