@@ -2,32 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* @font-face {
+  font-family: Meditative;
+  src: url('/Meditative.tff');
+} */
+
+@font-face {
+  font-family: Recoleta;
+  src: url('/Recoleta-RegularDEMO.otf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  background-color: black;
+  color: rgb(238, 238, 238);
+  font-family: Recoleta;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 1px lime;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+/* .logo {
+  height: ;
+} */
+
+.button {
+  border: solid 1.5px rgb(238, 238, 238);
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
 }
+
