@@ -1,12 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <main>
       <div className="main-content">
         <div className="text-section">
-        {/* <p className="text-section-p">Students of all ages, this is your calling.</p> */}
           <div className="slogan-group">
             <h1 className="text-gradient-underline"><b>Revise.</b></h1>
             <h1 className="text-gradient-underline"><b>Retain.</b></h1>
@@ -22,6 +20,18 @@ export default function Home() {
         <div className="image-section">
           <Image src="/frontpage.png" alt="Front Page" width={800} height={533} />
         </div>
+      </div>
+
+      {/* New heading and paragraph */}
+      <section className="about-techniques">
+        <h1 className="heading-text"><i>"Too often, we teach students what to think, not how to think."</i></h1>
+        <p className="description-text">
+          MetaCognify allows you to actively identify what is missing from your understanding of any topic. The mind is a strong asset, but we don't have a manual.
+        </p>
+      </section>
+      <div className="footer">
+        <p>Created by The Falconers</p>
+        <p>Powered by Falcon AI</p>
       </div>
     </main>
   );

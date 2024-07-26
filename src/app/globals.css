@@ -59,6 +59,16 @@ main, .nav-bar, body {
   font-size: 2.0rem; /* Adjust this value as needed */
 }
 
+/* .nav-bar-content {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.nav-bar-item {
+  color: #01011B;
+  margin-left: 2rem;
+} */
 .nav-bar-content {
   display: flex;
   flex-grow: 1;
@@ -67,7 +77,28 @@ main, .nav-bar, body {
 
 .nav-bar-item {
   color: #01011B;
-  margin-left: 2rem; /* Adjust spacing between items as needed */
+  margin-left: 2rem;
+  position: relative;
+}
+
+.nav-bar-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
+  transition: width 0.5s ease;
+}
+
+.nav-bar-item:hover::after {
+  width: 100%;
+}
+
+.nav-bar-item:hover{
+  cursor: pointer;
+  border-bottom: 2px solid linear-gradient(to right, #8D1F66, #6F1C84, #481888);
 }
 
 button {
@@ -201,5 +232,37 @@ button {
   height: 4px;
   background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
 }
+.about-techniques {
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
 
+.heading-text {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #F0F0F0; /* Or any color that fits your theme */
+}
+
+.description-text {
+  font-size: 1.25rem;
+  max-width: 800px;
+  color: #E0E0E0; /* Or any color that fits your theme */
+}
+.footer {
+  display: flex;
+  height: 7vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  padding:2rem;
+}
+
+.footer p{
+  color: #01011B;
+}
 
