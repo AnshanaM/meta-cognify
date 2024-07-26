@@ -34,14 +34,8 @@ main, .nav-bar, body {
   align-items: center;
 }
 
-.logo {
-  height: fit-content;
-  padding: 0;
-  margin: 0;
-}
-
-.logo h1 {
-  font-size: xx-large;
+.logo img {
+  height: 10vh;
 }
 
 button {
@@ -55,6 +49,15 @@ button {
 
 button:hover {
   background-color: #8D1F66;
+}
+
+.learn-more-button {
+  background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
+  border: none;
+}
+
+.learn-more-button:hover {
+  background: linear-gradient(to left, #8D1F66, #6F1C84, #481888);
 }
 
 .main-content {
@@ -114,11 +117,34 @@ button:hover {
   }
 }
 
-.underline-custom {
-  text-decoration: underline;
-  text-decoration-color: #8D1F66; /* Underline color */
-  text-decoration-thickness: 4px; /* Thickness of the underline */
-  text-underline-offset: 6px; /* Space between text and underline */
+.slogan-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.text-section-p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: -2rem;
+}
+
+
+.text-gradient-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.text-gradient-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
 }
 
 
