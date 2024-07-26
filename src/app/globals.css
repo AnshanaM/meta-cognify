@@ -76,6 +76,10 @@ button:hover {
   font-size: 3rem;
 }
 
+.text-section h2 {
+  font-size: 1.75rem;
+}
+
 .text-section p {
   font-size: 1.25rem;
 }
@@ -108,3 +112,12 @@ button:hover {
     transform: translateY(-10px);
   }
 }
+
+.underline-custom {
+  text-decoration: underline;
+  text-decoration-color: #ac2b7f; /* Underline color */
+  text-decoration-thickness: 4px; /* Thickness of the underline */
+  text-underline-offset: 4px; /* Space between text and underline */
+}
+
+
