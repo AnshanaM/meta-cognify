@@ -48,7 +48,7 @@ button {
 }
 
 button:hover {
-  background-color: #8D1F66;
+  background:#481888; 
 }
 
 .learn-more-button {
@@ -62,7 +62,8 @@ button:hover {
 
 .main-content {
   display: flex;
-  justify-content: space-between;
+  gap: 4rem;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
   height: 80vh;
@@ -97,12 +98,12 @@ button:hover {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  /* justify-content: right; */
 }
 
 .image-section img {
   width: auto;
-  max-height: 105vh;
+  max-height: 80vh;
   height: auto;
   border-radius: 10px;
   animation: float 2.5s ease-in-out infinite;
@@ -113,7 +114,7 @@ button:hover {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 

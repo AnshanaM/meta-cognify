@@ -14,8 +14,8 @@ export default function Home() {
         <p>Are you facing challenges in retaining information or grasping complex concepts? Elevate your learning journey with groundbreaking self-study techniques rooted in psychology, and supercharge your progress with cutting-edge AI models.</p>
         <p><i>Discover the power within you to excel beyond limits.</i></p>
         <div className="button-group">
-          <button className="learn-more-button">Learn More</button>
           <button className="sign-up-button">Sign Up</button>
+          <button className="learn-more-button">Learn More</button>
         </div>
       </div>
       <div className="image-section">
