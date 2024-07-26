@@ -89,6 +89,7 @@ button:hover {
   gap: 1rem;
 }
 
+
 .image-section {
   overflow: hidden;
   display: flex;
@@ -115,9 +116,9 @@ button:hover {
 
 .underline-custom {
   text-decoration: underline;
-  text-decoration-color: #ac2b7f; /* Underline color */
+  text-decoration-color: #8D1F66; /* Underline color */
   text-decoration-thickness: 4px; /* Thickness of the underline */
-  text-underline-offset: 4px; /* Space between text and underline */
+  text-underline-offset: 6px; /* Space between text and underline */
 }
 
 
