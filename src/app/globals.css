@@ -56,7 +56,7 @@ main, .nav-bar, body {
 .logo-text {
   font-family: AlfaSlabOne;
   color: hsl(240, 93%, 5%);
-  font-size: 2.0rem; /* Adjust this value as needed */
+  font-size: 2.0rem;
 }
 
 /* .nav-bar-content {
@@ -149,7 +149,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 3rem;
-  height: 80vh;
+  height: 86vh;
 }
 
 .text-section {
@@ -232,25 +232,38 @@ button {
   height: 4px;
   background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
 }
+/* Section with white background */
 .about-techniques {
-  height:100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
   text-align: center;
+  background-color: rgb(238, 238, 238); /* White background */
 }
 
-.heading-text {
+/* Section with #01011B background */
+.additional-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: rgb(238, 238, 238); /* Dark background */
+}
+
+.heading-text{
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #F0F0F0; /* Or any color that fits your theme */
+  color: #01011B; /* Or any color that fits your theme */
 }
 
 .description-text {
   font-size: 1.25rem;
   max-width: 800px;
-  color: #E0E0E0; /* Or any color that fits your theme */
+  color: #01011B; /* Or any color that fits your theme */
 }
 .footer {
   display: flex;
