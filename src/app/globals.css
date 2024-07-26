@@ -23,14 +23,42 @@ main, .nav-bar, body {
   margin: 0;
 }
 
+.logo-text{
+  color: #01011B;
+  size: xx-large;
+}
+
+/* .nav-bar {
+  display: flex;
+  height: 7vh;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+}
+
+.logo img {
+  height: 10vh;
+}
+
+.nav-bar-item{
+  color: #01011B;
+} */
+
 .nav-bar {
   display: flex;
   height: 7vh;
   flex-direction: row;
   justify-content: space-between;
-  margin: 1rem;
-  padding: 1rem;
-  justify-items: center;
+  padding: 2rem;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+}
+
+.logo {
+  display: flex;
   align-items: center;
 }
 
@@ -38,17 +66,34 @@ main, .nav-bar, body {
   height: 10vh;
 }
 
+.nav-bar-content {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.nav-bar-item {
+  color: #01011B;
+  margin-left: 2rem; /* Adjust spacing between items as needed */
+}
+
 button {
-  border: solid 1.5px rgb(238, 238, 238);
   padding: 0.5rem 1rem;
   border-radius: 50px;
   width: fit-content;
   transition: background-color 0.3s ease, color 0.3s ease;
-  color: white;
 }
 
-button:hover {
-  background:#481888; 
+.sign-up-button {
+  color: #01011B;
+  border: solid 1.5px rgb(238, 238, 238);
+  background-color: rgb(238, 238, 238);
+}
+
+.sign-up-button:hover {
+  color: rgb(238, 238, 238);
+  border: solid 1.5px rgb(238, 238, 238);
+  background-color: #01011B;
 }
 
 .learn-more-button {
@@ -60,12 +105,25 @@ button:hover {
   background: linear-gradient(to left, #8D1F66, #6F1C84, #481888);
 }
 
+.log-in-button {
+  color: rgb(238, 238, 238);
+  border: solid 1.5px rgb(238, 238, 238);
+  background-color: #01011B;
+}
+
+.log-in-button:hover {
+  color: #01011B;
+  border: solid 1.5px #01011B;
+  background-color: rgb(238, 238, 238);
+}
+
+
 .main-content {
   display: flex;
   gap: 4rem;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem;
   height: 80vh;
 }
 
@@ -99,11 +157,13 @@ button:hover {
   display: flex;
   flex-direction: row;
   /* justify-content: right; */
+  justify-content: center;
+  align-items: center;
 }
 
 .image-section img {
   width: auto;
-  max-height: 80vh;
+  max-height: 70vh;
   height: auto;
   border-radius: 10px;
   animation: float 2.5s ease-in-out infinite;
@@ -114,7 +174,7 @@ button:hover {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(+5px);
   }
 }
 
