@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/*@font-face {
-  font-family: Meditative;
-  src: url('/Meditative.tff');
-}*/
+@font-face {
+  font-family: AlfaSlabOne;
+  src: url('/AlfaSlabOne-Regular.otf');
+}
 
 @font-face {
   font-family: Recoleta;
@@ -23,10 +23,6 @@ main, .nav-bar, body {
   margin: 0;
 }
 
-.logo-text{
-  color: #01011B;
-  size: xx-large;
-}
 
 /* .nav-bar {
   display: flex;
@@ -57,13 +53,10 @@ main, .nav-bar, body {
   background-color: rgb(240, 240, 240);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 10vh;
+.logo-text {
+  font-family: AlfaSlabOne;
+  color: hsl(240, 93%, 5%);
+  font-size: 2.0rem; /* Adjust this value as needed */
 }
 
 .nav-bar-content {
@@ -119,6 +112,7 @@ button {
 
 
 .main-content {
+  margin-top: 4vh;
   display: flex;
   gap: 4rem;
   justify-content: center;
