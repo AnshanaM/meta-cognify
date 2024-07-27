@@ -200,7 +200,8 @@ button {
 
 .text-gradient-underline {
   position: relative;
-  display: inline-block;
+  display: inline;
+  font-size: 3rem; /* Same size as Revise. Retain. Revolutionize */
 }
 
 .text-gradient-underline::after {
@@ -210,8 +211,16 @@ button {
   right: 0;
   bottom: 0;
   height: 4px;
-  background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
+  background: linear-gradient(to right, #db37a2, #6F1C84, #481888);
 }
+
+.paragraph-style {
+  font-size: 1.25rem;
+  gap: 1rem;
+  color: rgb(238, 238, 238);
+  max-width:100%; /* Adjust as needed */
+}
+
 
 @keyframes float {
   0%, 100% {
@@ -333,6 +342,17 @@ button {
   align-items: center;
 }
 
+.socrates {
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 80vh;
+  padding: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
 section {
   position: relative;
   background-color: #01011B;
@@ -371,7 +391,7 @@ section {
   height: 25vh;
   width: 20vw;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 0.5rem;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -385,4 +405,7 @@ section {
 
 .block-gradient {
   background: linear-gradient(to bottom, #01011B, #481888);
+}
+.block-text{
+  text-align: center;
 }
