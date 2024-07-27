@@ -258,11 +258,12 @@ button {
 
 
 .about-techniques {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 2rem 0;
+  margin: 0;
   text-align: center;
   background-color: rgb(238, 238, 238); /* White background */
 }
@@ -327,4 +328,4 @@ button {
   color: #01011B;
 }
 
-/* Existing CSS code ... */
+

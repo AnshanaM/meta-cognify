@@ -24,7 +24,9 @@ export default function Home() {
 
       {/* New heading and paragraph */}
       <section className="about-techniques">
-        <Image src="/left.png" alt="Left Image" width={150} height={150} className="left-image" />
+        {/* <div className="side-panel"> */}
+          <Image src="/left.png" alt="Left Image" width={150} height={150} className="left-image" />
+        {/* </div> */}
         <div className="text-container">
           <i><b><h1 className="heading-text">
             "Too often, we teach students <span className="highlight-text">what</span> to think, not <span className="highlight-text">how</span> to think."
@@ -33,8 +35,9 @@ export default function Home() {
           Metacognition is an advanced level of thinking that involves understanding and being aware of one's own thought processes. This capability is essential for achieving advanced comprehension of concepts across all fields. Start now with MetaCognify - Enhance your understanding of any subject with any of the following self-study techniques powered by AI.
           </p>
         </div>
-
-        <Image src="/right.png" alt="Right Image" width={150} height={150} className="right-image" />
+        {/* <div className="side-panel"> */}
+          <Image src="/right.png" alt="Right Image" width={150} height={150} className="right-image" />
+        {/* </div> */}
       </section>
 
       {/* New section with dark background */}
@@ -64,8 +67,8 @@ export default function Home() {
         </div>
       </section>
       {/* New heading and paragraph */}
-      <section className="about-techniques">
-      </section>
+      {/* <section className="about-techniques">
+      </section> */}
 
 
       <div className="footer">
