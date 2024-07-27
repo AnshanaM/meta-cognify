@@ -90,6 +90,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section>
+        <div className="socrates">
+          <div className="blocks">
+          </div>
+          <div className="description">
+            <div className="slogan-group">
+              <b><h1 className="text-gradient-underline">Socratic Method</h1></b>
+            </div>
+            <br/>
+            <i><p className="paragraph-style">“A technique of philosophical investigation that emphasizes the use of conversation and inquiry to explore difficult ideas and concepts.”</p></i>
+            <br/>
+            <p className="paragraph-style">
+            Is there a challenging topic you want to explore for the first time? Have a thoughtful conversation with SocraBot, who will craft questions in a way that you will eventually discover and realise the concept on your own!
+            </p>
+            <br/>
+            <button className="log-in-button">Talk With SocraBot</button>
+          </div>
+        </div>
+      </section>
+
+
       <div className="footer">
         <p>Created by The Falconers</p>
         <p>Powered by Falcon AI</p>

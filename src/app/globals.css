@@ -218,7 +218,7 @@ button {
   font-size: 1.25rem;
   gap: 1rem;
   color: rgb(238, 238, 238);
-  max-width:100%; /* Adjust as needed */
+  max-width:100%;
 }
 
 
@@ -323,12 +323,12 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(240, 240, 240);
+  background-color:#01011B;
   padding: 2rem;
 }
 
 .footer p {
-  color: #01011B;
+  color:rgb(240, 240, 240);
 }
 
 .feynman {
@@ -344,19 +344,39 @@ button {
 
 .socrates {
   background-color: rgb(240, 240, 240);
-  display: flex;
+  display:flex;
   flex-direction: row;
   gap: 1rem;
-  height: 80vh;
+  height: 90vh;
   padding: 4rem;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
+
+}
+
+.socrates .description {
+  text-align: right;
+}
+
+.socrates .description .slogan-group {
+  align-items: right;
+
+}
+
+.socrates .description .slogan-group .text-gradient-underline {
+  color: #01011B;
+  text-align: right; /* Ensure the title text is right-aligned */
+  align-content: right;
+  width: 100%;
+}
+
+.socrates .description .paragraph-style{
+  color: #01011B;
 }
 
 section {
   position: relative;
   background-color: #01011B;
-  padding: 20px;
   overflow: hidden;
 }
 
