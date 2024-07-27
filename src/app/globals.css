@@ -348,6 +348,12 @@ section {
 .description {
   width: 50%;
 }
+.description h1{
+  display:inline;
+  flex-direction: row;
+  gap: 1.5rem;
+  max-width: 50%;
+}
 
 .blocks {
   display: flex;

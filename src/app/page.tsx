@@ -29,7 +29,7 @@ export default function Home() {
             "Too often, we teach students <span className="highlight-text">what</span> to think, not <span className="highlight-text">how</span> to think."
           </h1></b></i>
           <p className="description-text">
-          Metacognition is an advanced level of thinking that involves understanding and being aware of one's own thought processes. This capability is essential for achieving advanced comprehension of concepts across all fields. Start now with MetaCognify - Enhance your understanding of any subject with any of the following self-study techniques powered by AI.
+          Metacognition is a higher level of thinking. It is the <span className="highlight-text">understanding and awareness of one’s thought process.</span> This is crucial if you wish to have an advanced level of understanding of concepts, regardless of which field. From the <span className="highlight-text">Feynman Technique</span> to the <span className="highlight-text">Socratic Method</span>, use MetaCognify to understand any topic of your choice, and track your progress with Falcon AI. 
           </p>
         </div>
         <Image src="/socrates.png" alt="Right Image" width={300} height={300} className="right-image" />
@@ -38,8 +38,10 @@ export default function Home() {
       <section>
         <div className="feynman">
           <div className="description">
-            <b><h1>LOREM <span className="highlight-text">IPSUM</span></h1></b>
-            <p>Passively consuming information can only take you so far. How can you be sure if you fully understand it? The Feynman Technique posits that the best way to test your understanding is by teaching it to a complete beginner.</p>
+            <div className="slogan-group">
+              <b><h1 className="text-gradient-underline">The Feynman Technique</h1></b>
+            </div>
+            <p>"The ultimate test of your knowledge is your capacity to convey it to others."</p>
             <p>With MetaCognify, you can put this to the test by explaining your topic to Noobert, our AI bot, who acts as a complete beginner! Noobert will ask questions that beginners ask, try your best to explain as simply as possible.</p>
             <p>After you complete your explanation, Noobert rates your explanation based on simplicity and accuracy, providing analytics and possible knowledge gaps.</p>
             <i><p>"The ultimate test of your knowledge is your capacity to convey it to others."</p></i>
