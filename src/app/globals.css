@@ -158,7 +158,6 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  /* justify-content: right; */
   justify-content: center;
   align-items: center;
 }
@@ -225,37 +224,33 @@ button {
 
 .falcon-text {
   position: relative;
-  display: inline-block; /* Ensure the tooltip aligns properly */
+  display: inline-block;
 }
 
 .falcon-text::after {
   content: "developed by the Technology Innovation Institute (TII), a research centre within ATRC.";
   position: absolute;
-  background-color: rgba(1, 1, 27, 0.5); /* Semi-transparent background */
+  background-color: rgba(1, 1, 27, 0.5);
   border: 1px solid white;
   color: white;
   padding: 0.5rem;
   border-radius: 5px;
   font-size: 1rem;
-  max-width: 500px; /* Adjust as needed */
-  word-wrap: break-word; /* Ensure long words wrap */
-  white-space: normal; /* Allow text wrapping */
+  max-width: 800px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
-  backdrop-filter: blur(2px); /* Blur effect on the content behind */
-  left: 100%; /* Position to the right of the element */
+  backdrop-filter: blur(2px);
+  left: 100%;
   top: 50%;
-  transform: translateX(10px) translateY(-50%); /* Center and add a bit of space */
-  z-index: 10; /* Ensure it appears above other content */
+  transform: translateX(10px) translateY(-50%);
+  z-index: 10;
 }
 
 .falcon-text:hover::after {
   opacity: 1;
   visibility: visible;
 }
-
-
 
 .about-techniques {
   height: 80vh;
@@ -265,7 +260,7 @@ button {
   padding: 2rem 0;
   margin: 0;
   text-align: center;
-  background-color: rgb(238, 238, 238); /* White background */
+  background-color: rgb(238, 238, 238);
 }
 
 .about-techniques img {
@@ -289,13 +284,13 @@ button {
 .heading-text {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #01011B; /* Or any color that fits your theme */
+  color: #01011B;
 }
 
 .description-text {
   font-size: 1.25rem;
   max-width: 800px;
-  color: #01011B; /* Or any color that fits your theme */
+  color: #01011B;
 }
 
 .highlight-text {
@@ -303,7 +298,6 @@ button {
 }
 
 
-/* Section with #01011B background */
 .additional-section {
   height: 100vh;
   display: flex;
@@ -311,7 +305,7 @@ button {
   align-items: center;
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #01011B; /* Dark background */
+  background-color: #01011B;
 }
 
 .footer {
@@ -328,4 +322,61 @@ button {
   color: #01011B;
 }
 
+.feynman {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 80vh;
+  padding: 2rem;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+}
 
+section {
+  position: relative;
+  background-color: #01011B;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.background-image img {
+  width: 100%;
+  height: auto;
+}
+
+.description {
+  width: 50%;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.cols {
+  display: flex;
+  flex-direction: column;
+}
+
+.block {
+  margin: 1rem;
+  height: 25vh;
+  width: 20vw;
+  border-radius: 5px;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.block-black {
+  background-color: #0e0e25;
+}
+
+.block-gradient {
+  background: linear-gradient(to bottom, #01011B, #481888);
+}

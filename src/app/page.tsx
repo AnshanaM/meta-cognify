@@ -22,11 +22,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* New heading and paragraph */}
       <section className="about-techniques">
-        {/* <div className="side-panel"> */}
-          <Image src="/left.png" alt="Left Image" width={150} height={150} className="left-image" />
-        {/* </div> */}
+        <Image src="/feynman.png" alt="Left Image" width={300} height={300} className="left-image" />
         <div className="text-container">
           <i><b><h1 className="heading-text">
             "Too often, we teach students <span className="highlight-text">what</span> to think, not <span className="highlight-text">how</span> to think."
@@ -35,40 +32,58 @@ export default function Home() {
           Metacognition is an advanced level of thinking that involves understanding and being aware of one's own thought processes. This capability is essential for achieving advanced comprehension of concepts across all fields. Start now with MetaCognify - Enhance your understanding of any subject with any of the following self-study techniques powered by AI.
           </p>
         </div>
-        {/* <div className="side-panel"> */}
-          <Image src="/right.png" alt="Right Image" width={150} height={150} className="right-image" />
-        {/* </div> */}
+        <Image src="/socrates.png" alt="Right Image" width={300} height={300} className="right-image" />
       </section>
 
-      {/* New section with dark background */}
-      <section className="main-content">
-        <div className="image-section">
-          <div className="feynman-image">
-            <Image src="/noobert.png" alt="Front Page" width={200} height={300} />
+      <section>
+        <div className="feynman">
+          <div className="description">
+            <b><h1>LOREM <span className="highlight-text">IPSUM</span></h1></b>
+            <p>Passively consuming information can only take you so far. How can you be sure if you fully understand it? The Feynman Technique posits that the best way to test your understanding is by teaching it to a complete beginner.</p>
+            <p>With MetaCognify, you can put this to the test by explaining your topic to Noobert, our AI bot, who acts as a complete beginner! Noobert will ask questions that beginners ask, try your best to explain as simply as possible.</p>
+            <p>After you complete your explanation, Noobert rates your explanation based on simplicity and accuracy, providing analytics and possible knowledge gaps.</p>
+            <i><p>"The ultimate test of your knowledge is your capacity to convey it to others."</p></i>
           </div>
-          <div className="text-section">
-          <b><div className="slogan-group">
-            <h1 className="text-gradient-underline"><b>The Feynman Technique</b></h1>
-          </div></b>
-          <p>
-            Passively consuming information about a topic can only take you so far. How can you be sure if you fully understand it?
-          </p>
-          <i><p className="quote">
-            "The ultimate test of your knowledge is your capacity to convey it to others."
-          </p></i>
-          <ul>
-              <li>Noobert acts as a complete beginner and will ask questions that beginners typically ask.</li>
-              <li>Try your best to explain the topic as simply as possible.</li>
-              <li>After you complete your explanation, Noobert will:</li>
-              <li>Rate your explanation based on simplicity and accuracy.</li>
-              <li>Provide analytics and identify possible knowledge gaps.</li>
-          </ul>
+          <div className="blocks">
+            <div className="cols">
+              <div className="block block-black">
+                  <div className="icon">
+                    ICON
+                  </div>
+                  <div className="block-text">
+                    short text description
+                  </div>
+              </div>
+              <div className="block block-gradient">
+                <div className="icon">
+                    ICON
+                  </div>
+                  <div className="block-text">
+                    short text description
+                </div>
+              </div>
+            </div>
+            <div className="cols">
+              <div className="block block-gradient">
+                <div className="icon">
+                    ICON
+                  </div>
+                  <div className="block-text">
+                    short text description
+                </div>
+              </div>
+              <div className="block block-black">
+                <div className="icon">
+                    ICON
+                  </div>
+                  <div className="block-text">
+                    short text description
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      {/* New heading and paragraph */}
-      {/* <section className="about-techniques">
-      </section> */}
 
 
       <div className="footer">
