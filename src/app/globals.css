@@ -317,20 +317,6 @@ button {
   background-color: #01011B;
 }
 
-.footer {
-  display: flex;
-  height: 7vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color:#01011B;
-  padding: 2rem;
-}
-
-.footer p {
-  color:rgb(240, 240, 240);
-}
-
 .feynman {
   display: flex;
   flex-direction: row;
@@ -358,14 +344,14 @@ button {
   text-align: right;
 }
 
-.socrates .description .slogan-group {
+.socrates .description {
   align-items: right;
 
 }
 
-.socrates .description .slogan-group .text-gradient-underline {
+.socrates .description .text-gradient-underline {
   color: #01011B;
-  text-align: right; /* Ensure the title text is right-aligned */
+  text-align: right;
   align-content: right;
   width: 100%;
 }
@@ -428,4 +414,47 @@ section {
 }
 .block-text{
   text-align: center;
+}
+
+.split-screen {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+}
+
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #01011B;
+  color: rgb(240, 240, 240);
+  width: 50vw;
+  justify-items: center;
+  align-items: center;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #0e0e25;
+  color: rgb(240, 240, 240);
+  width: 50vw;
+  justify-items: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  height: 7vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(240, 240, 240);
+  padding: 2rem;
+}
+
+.footer p {
+  color: #01011B;
 }
