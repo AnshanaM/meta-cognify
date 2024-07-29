@@ -2,25 +2,31 @@
 
 import { useState } from "react";
 import Head from "next/head";
+import axios from "axios";
 import "./Chat.css";
 
 const ChatPage = () => {
   const [messages, setMessages] = useState<{ user: string; text: string }[]>([]);
   const [input, setInput] = useState("");
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (input.trim() !== "") {
       const newMessages = [...messages, { user: "User", text: input }];
       setMessages(newMessages);
       setInput("");
-      getMessage(newMessages);
+      const response = await getMessage(input);
+      setMessages([...newMessages, { user: "Bot", text: response }]);
     }
   };
 
-  const getMessage = (currentMessages: { user: string; text: string }[]) => {
-    setTimeout(() => {
-      setMessages([...currentMessages, { user: "Bot", text: "Hi, I'm Noobert" }]);
-    }, 500); // Simulating a delay for the bot response
+  const getMessage = async (message: string) => {
+    try {
+      const response = await axios.post("http://localhost:5000/chat", { message });
+      return response.data.response;
+    } catch (error) {
+      console.error("Error fetching the response:", error);
+      return "Sorry, something went wrong.";
+    }
   };
 
   return (
