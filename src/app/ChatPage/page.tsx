@@ -1,36 +1,26 @@
 "use client"
 import '../styles/Chat.css';
+import { useChat } from 'ai/react';
+import { FormEvent } from 'react';
 
 const ChatPage = () => {
-  
-  const getMessages = async () => {
-    console.log("press")
-    const options = {
-      method: "POST",
-      body: JSON.stringify({
-        message: "hello how are you?"
-      }),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }
-    try {
-      console.log("press")
-      const response = await fetch('https://localhost:8000/completions', options)
-      console.log(`Status: ${response.status}`);
-      if (!response.ok) {
-        // Handle errors from the server
-        const errorData = await response.json();
-        console.error('Server error:', errorData);
-        return;
-    }
-      const data = await response.json()
-      console.log(data)
-    } catch (error) {
-      console.error(error)
-      
-    }
-  }
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: '/api/chat',
+  });
+
+  const renderResponse = () => {
+    return messages.map((m) => (
+      <div key={m.id}>
+        {m.role === "user" ? "User: " : "Noobert: "}
+        {m.content}
+      </div>
+    ));
+  };
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleSubmit;
+  };
 
   return (
     <div className="app">
@@ -48,17 +38,27 @@ const ChatPage = () => {
       <section className='main'>
         <h1>Noobert</h1>
         <ul className='feed'>
-          
+          {renderResponse()}
         </ul>
-        <div className="bottom-section">
+        <form className="bottom-section" onSubmit={handleSubmit}>
           <div className='input-container'>
-            <input className='input-field' />
-            <div id='submit' onClick={getMessages}>➢</div>
+            <input 
+              className='input-field' 
+              value={input} 
+              placeholder='Say something...' 
+              onChange={handleInputChange}
+            />
+            <button 
+              type="submit" 
+              className='submit'
+            >
+              send
+            </button>
           </div>
           <p className='info'>
             Using the Falcon 2 180 B models.
           </p>
-        </div>
+        </form>
       </section>
     </div>
   );
