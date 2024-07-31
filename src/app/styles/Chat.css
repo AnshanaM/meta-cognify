@@ -19,12 +19,18 @@ body {
 }
 
 .new-topic {
-  border: 0.5px solid white;
+  border: none;
   border-radius: 5px;
   padding: 10px;
   width: 100%;
-  background-color: transparent;
+  background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
 }
+
+.new-topic:hover{
+  cursor: pointer;
+  background: linear-gradient(to left, #8D1F66, #6F1C84, #481888);
+}
+
 
 .new-topic:hover {
   cursor: pointer;
@@ -97,9 +103,28 @@ input:focus {
   outline: none;
 }
 
-#submit {
+.submit {
   position: absolute;
-  bottom: 15px;
-  right: 0px;
+  bottom: 5px;
+  right: -25px;
   cursor: pointer;
+  background-color: #6F1C84;
+  border: none;
+  border-radius: 5px;
+}
+
+.feed {
+  width: 640px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: column;
+}
+
+.message{
+  width: 100%;
+  background-color: #19192b;
+  padding: 5px;
+  border-radius: 5px;
+  font-size:small;
 }

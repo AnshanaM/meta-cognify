@@ -99,7 +99,8 @@ export default function Home() {
 
       <section>
         <div className="socrates">
-          <div className="blocks">
+          <div className="image">
+            <Image src="/NoobertCollage.jpeg" alt="Front Page" width={500} height={500} unoptimized/>
           </div>
           <div className="description">
             <b><h1 className="text-gradient-underline">Socratic Method</h1></b>

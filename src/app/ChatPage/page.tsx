@@ -10,7 +10,7 @@ const ChatPage = () => {
 
   const renderResponse = () => {
     return messages.map((m) => (
-      <div key={m.id}>
+      <div key={m.id} className='message'>
         {m.role === "user" ? "User: " : "Noobert: "}
         {m.content}
       </div>
@@ -45,18 +45,16 @@ const ChatPage = () => {
             <input 
               className='input-field' 
               value={input} 
-              placeholder='Say something...' 
+              placeholder='Say Something...' 
               onChange={handleInputChange}
             />
             <button 
               type="submit" 
               className='submit'
-            >
-              send
-            </button>
+            >↑</button>
           </div>
           <p className='info'>
-            Using the Falcon 2 180 B models.
+            Using the Falcon 2 180B models.
           </p>
         </form>
       </section>
