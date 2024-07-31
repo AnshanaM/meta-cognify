@@ -68,9 +68,9 @@ export async function POST(req: Request) {
         });
         
         const simpleResult = await simpleResponse.json();
-         console.log("Simple invocation response:", simpleResult);
+        //  console.log("Simple invocation response:", simpleResult);
 
-        console.log(simpleResult.choices[0].message.content);
+        // console.log(simpleResult.choices[0].message.content);
 
         return NextResponse.json(simpleResult);
         // Streaming invocation
