@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import "../styles/NavBar.css";
 export default function Navbar() {
     return (
         <div className="nav-bar">

@@ -1,61 +1,66 @@
-"use client";
-
-import { useState } from "react";
-import Head from "next/head";
-import axios from "axios";
-import "./Chat.css";
+"use client"
+import '../styles/Chat.css';
 
 const ChatPage = () => {
-  const [messages, setMessages] = useState<{ user: string; text: string }[]>([]);
-  const [input, setInput] = useState("");
-
-  const sendMessage = async () => {
-    if (input.trim() !== "") {
-      const newMessages = [...messages, { user: "User", text: input }];
-      setMessages(newMessages);
-      setInput("");
-      const response = await getMessage(input);
-      setMessages([...newMessages, { user: "Bot", text: response }]);
+  
+  const getMessages = async () => {
+    console.log("press")
+    const options = {
+      method: "POST",
+      body: JSON.stringify({
+        message: "hello how are you?"
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
     }
-  };
-
-  const getMessage = async (message: string) => {
     try {
-      const response = await axios.post("http://localhost:5000/chat", { message });
-      return response.data.response;
-    } catch (error) {
-      console.error("Error fetching the response:", error);
-      return "Sorry, something went wrong.";
+      console.log("press")
+      const response = await fetch('https://localhost:8000/completions', options)
+      console.log(`Status: ${response.status}`);
+      if (!response.ok) {
+        // Handle errors from the server
+        const errorData = await response.json();
+        console.error('Server error:', errorData);
+        return;
     }
-  };
+      const data = await response.json()
+      console.log(data)
+    } catch (error) {
+      console.error(error)
+      
+    }
+  }
 
   return (
-    <>
-      <Head>
-        <title>Noobert</title>
-      </Head>
-      <div className="chatContainer">
-        <div className="chatWindow">
-          {messages.map((msg, index) => (
-            <div key={index} className={`chatMessage ${msg.user.toLowerCase()}`}>
-              <span>{msg.text}</span>
-            </div>
-          ))}
+    <div className="app">
+      <section className="side-bar">
+        <button className='new-topic'>+ New Topic</button>
+        <ul className="history">
+          <li>
+            BLURGH
+          </li>
+        </ul>
+        <nav>
+          <p>Powered by AI71</p>
+        </nav>
+      </section>
+      <section className='main'>
+        <h1>Noobert</h1>
+        <ul className='feed'>
+          
+        </ul>
+        <div className="bottom-section">
+          <div className='input-container'>
+            <input className='input-field' />
+            <div id='submit' onClick={getMessages}>➢</div>
+          </div>
+          <p className='info'>
+            Using the Falcon 2 180 B models.
+          </p>
         </div>
-        <div className="inputContainer">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") sendMessage();
-            }}
-            placeholder="Type a message..."
-          />
-          <button onClick={sendMessage}>Send</button>
-        </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 };
 

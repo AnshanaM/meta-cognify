@@ -1,0 +1,91 @@
+@font-face {
+    font-family: AlfaSlabOne;
+    src: url('/AlfaSlabOne-Regular.otf');
+  }
+  
+  @font-face {
+    font-family: Recoleta;
+    src: url('/Recoleta-RegularDEMO.otf');
+  }
+  
+  * {
+    color: rgb(238, 238, 238);
+    font-family: Recoleta;
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    -moz-font-feature-settings: "liga" off, "clig" off;
+    -webkit-font-feature-settings: "liga" off, "clig" off;
+    font-feature-settings: "liga" off, "clig" off;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  .nav-bar {
+    display: flex;
+    height: 5vh;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+  }
+  
+  .logo-text {
+    font-family: AlfaSlabOne;
+    color: hsl(240, 93%, 5%);
+    font-size: 2.0rem;
+  }
+  
+  
+  .nav-bar-content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
+  
+  .nav-bar-item {
+    color: #01011B;
+    margin-left: 2rem;
+    position: relative;
+  }
+  
+  .nav-bar-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
+    transition: width 0.5s ease;
+  }
+  
+  .nav-bar-item:hover::after {
+    width: 100%;
+  }
+  
+  .nav-bar-item:hover{
+    cursor: pointer;
+    border-bottom: 2px solid linear-gradient(to right, #8D1F66, #6F1C84, #481888);
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    width: fit-content;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .log-in-button {
+    color: rgb(238, 238, 238);
+    border: solid 1.5px rgb(238, 238, 238);
+    background-color: #01011B;
+  }
+  
+  .log-in-button:hover {
+    color: #01011B;
+    border: solid 1.5px #01011B;
+    background-color: rgb(238, 238, 238);
+  }
+  
