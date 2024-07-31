@@ -68,52 +68,55 @@ export async function POST(req: Request) {
         });
         
         const simpleResult = await simpleResponse.json();
-        console.log("Simple invocation response:", simpleResult);
+         console.log("Simple invocation response:", simpleResult);
 
+        console.log(simpleResult.choices[0].message.content);
+
+        return NextResponse.json(simpleResult);
         // Streaming invocation
-        const streamResponse = await fetch(`${AI71_BASE_URL}chat/completions?stream=true`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                model: "tiiuae/falcon-180B-chat",
-                messages: [{ role: "user", content: "write a poem." }],
-            }),
-        });
+        // const streamResponse = await fetch(`${AI71_BASE_URL}chat/completions?stream=true`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Authorization': `Bearer ${API_KEY}`,
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         model: "tiiuae/falcon-180B-chat",
+        //         messages: [{ role: "user", content: "write a poem." }],
+        //     }),
+        // });
 
-        const reader = streamResponse.body?.getReader();
-        if (!reader) throw new Error("No reader found");
+        // const reader = streamResponse.body?.getReader();
+        // if (!reader) throw new Error("No reader found");
 
-        const stream = new ReadableStream({
-            async start(controller) {
-                try {
-                    while (true) {
-                        const { done, value } = await reader.read();
-                        if (done) break;
-                        const chunk = new TextDecoder().decode(value);
-                        // Process the chunk
-                        const deltaContent = JSON.parse(chunk).choices[0]?.delta?.content;
-                        if (deltaContent) {
-                            controller.enqueue(deltaContent);
-                        }
-                    }
-                } catch (error) {
-                    console.error('Stream reading error:', error);
-                } finally {
-                    controller.close();
-                }
-            }
-        });
+        // const stream = new ReadableStream({
+        //     async start(controller) {
+        //         try {
+        //             while (true) {
+        //                 const { done, value } = await reader.read();
+        //                 if (done) break;
+        //                 const chunk = new TextDecoder().decode(value);
+        //                 // Process the chunk
+        //                 const deltaContent = JSON.parse(chunk).choices[0]?.delta?.content;
+        //                 if (deltaContent) {
+        //                     controller.enqueue(deltaContent);
+        //                 }
+        //             }
+        //         } catch (error) {
+        //             console.error('Stream reading error:', error);
+        //         } finally {
+        //             controller.close();
+        //         }
+        //     }
+        // });
 
-        return new NextResponse(stream, {
-            headers: {
-                'Content-Type': 'text/event-stream',
-                'Cache-Control': 'no-cache',
-                'Connection': 'keep-alive',
-            }
-        });
+        // return new NextResponse(stream, {
+        //     headers: {
+        //         'Content-Type': 'text/event-stream',
+        //         'Cache-Control': 'no-cache',
+        //         'Connection': 'keep-alive',
+        //     }
+        // });
     } catch (error) {
         console.error('Error handling request:', error);
         return NextResponse.json({ error: 'Failed to handle request' }, { status: 500 });

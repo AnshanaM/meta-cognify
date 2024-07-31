@@ -26,14 +26,9 @@ body {
   background: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
 }
 
-.new-topic:hover{
-  cursor: pointer;
-  background: linear-gradient(to left, #8D1F66, #6F1C84, #481888);
-}
-
-
 .new-topic:hover {
   cursor: pointer;
+  background: linear-gradient(to left, #8D1F66, #6F1C84, #481888);
 }
 
 nav {
@@ -85,7 +80,7 @@ nav {
   max-width: 650px;
 }
 
-.input-field{
+.input-field {
   width: 100%;
   border: none;
   background-color: #0e0e25;
@@ -114,17 +109,33 @@ input:focus {
 }
 
 .feed {
-  width: 640px;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 640px;
   display: flex;
-  flex: column;
+  flex-direction: column;
+  align-items: flex-start; /* Align messages to the left by default */
+  gap: 5px;
 }
 
-.message{
-  width: 100%;
-  background-color: #19192b;
-  padding: 5px;
+.message {
+  max-width: 70%;
+  padding: 10px;
   border-radius: 5px;
-  font-size:small;
+  font-size: small;
+  word-wrap: break-word;
+  display: flex;
+}
+
+.message.user {
+  background-color: #2a2a3d;
+  align-self: flex-end;
+  justify-content: flex-end;
+  text-align: right; /* Right-align text for user messages */
+}
+
+.message.assistant {
+  background-color: #19192b;
+  align-self: flex-start;
+  justify-content: flex-start;
+  text-align: left; /* Left-align text for assistant messages */
 }
