@@ -1,10 +1,10 @@
 import Link from "next/link";
+import "../styles/NavBar.css";
 
 export default function Navbar() {
     return (
         <div className="nav-bar">
         <Link href={'/'}>
-            {/* <img src="/logo.png" alt="Logo"/> */}
             <h1 className="logo-text">MetaCognify</h1>
         </Link>
         <div className="nav-bar-content">
