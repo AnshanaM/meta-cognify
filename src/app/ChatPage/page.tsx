@@ -79,9 +79,9 @@ const ChatPage = () => {
             add analytics
           </div>
         </section>
-        <nav>
+        {/* <nav>
           <p>Powered by AI71</p>
-        </nav>
+        </nav> */}
       </section>
       <section className='main'>
         <h1>Noobert</h1>
@@ -93,7 +93,7 @@ const ChatPage = () => {
             <input 
               className='input-field' 
               value={input} 
-              placeholder='Say Something...' 
+              placeholder='Say something...' 
               onChange={handleInputChange}
             />
             <button 
@@ -102,7 +102,7 @@ const ChatPage = () => {
             >↑</button>
           </div>
           <p className='info'>
-            Using the Falcon 2 180B models.
+            Powered by AI71 Falcon 2 180B model.
           </p>
         </form>
       </section>

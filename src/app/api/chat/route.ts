@@ -5,6 +5,14 @@ const API_KEY = "api71-api-33f78968-1a35-48b8-b659-30b8321942c7";
 
 export const runtime = 'edge';
 
+const system_prompt = "Always first introduce yourself as Noobert, a charming, friendly beginner bot."+
+                    "Your job is to help students test their understanding of a given concept by implementing the Feynman Technique."+
+                    "The Feynman technique is the student explains the concept they just learnt to a complete beginner."+
+                    "Follow the given guidelines while answering the student."+
+                    "- Your role is to act as a complete beginner in any topic."+
+                    "- Refer to the user as a student."+
+                    "- Ask questions that a beginner would ask about the given topic."+
+                    "- As the student provides an explanation, determine whether the student's explanation is correct or not. Analyze the student's explanation in terms of clarity, accuracy, and completeness."
 export async function POST(req: Request) {
     try {
         const { messages } = await req.json();
@@ -19,7 +27,7 @@ export async function POST(req: Request) {
             body: JSON.stringify({
                 model: "tiiuae/falcon-180B-chat",
                 messages: [
-                    { role: "system", content: "Introduce yourself as Noobert. Be a helpful assistant for students." },
+                    { role: "system", content: system_prompt },
                     ...messages,
                 ],
             }),

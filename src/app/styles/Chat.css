@@ -11,7 +11,7 @@ body {
 .side-bar {
   background-color: #0e0e25;
   height: 86vh;
-  width: 600px;
+  width:800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,16 +31,17 @@ body {
   background: linear-gradient(to left, #8D1F66, #6F1C84, #481888);
 }
 
-nav {
+/* nav {
   border-top: 0.5px solid white;
   padding: 10px;
   margin: 10px;
-}
+} */
 
 .history {
   padding: 10px;
   margin: 10px;
   height: 100%;
+  border-radius: 5px;
 }
 
 .main {
