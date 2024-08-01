@@ -78,26 +78,15 @@ button {
 
 .log-in-button {
   color: rgb(238, 238, 238);
-  border: solid 1.5px rgb(238, 238, 238);
+  border: 1px solid rgb(238, 238, 238);
   background-color: #01011B;
 }
 
 .log-in-button:hover {
   color: #01011B;
-  border: solid 1.5px #01011B;
+  border: 1.5px solid #01011B;
   background-color: rgb(238, 238, 238);
-}
-
-.sign-up-button {
-  color: #01011B;
-  border: solid 1.5px #01011B;
-  background-color: rgb(238, 238, 238);
-}
-
-.sign-up-button:hover {
-  color: rgb(238, 238, 238);
-  border: solid 1.5px rgb(238, 238, 238);
-  background-color: #01011B;
+  cursor: pointer;
 }
 
 .menu-icon {

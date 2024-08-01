@@ -17,10 +17,10 @@ export default function Home() {
             <h1 className="text-gradient-underline"><b>Retain.</b></h1>
             <h1 className="text-gradient-underline"><b>Revolutionize.</b></h1>
           </div>
-          <p className="paragraph-style">Students of all ages, this is your calling. Struggling to grasp or retain new knowledge? Boost your understanding and track your progress using our <b className="falcon-text">Falcon</b>-powered self-study tools</p>
+          <p className="paragraph-style">Students, this is your calling. Struggling to grasp new knowledge? Boost your understanding and track your progress using our <b className="falcon-text">Falcon</b>-powered self-study tools.</p>
           <p><i>Discover the power within you to excel beyond limits.</i></p>
           <div className="button-group">
-            <button className="sign-up-button">Sign Up</button>
+            {/* <button className="sign-up-button">Sign Up</button> */}
             <button className="learn-more-button" onClick={() => router.push('/About')}>Learn More</button>
           </div>
         </div>
@@ -41,6 +41,25 @@ export default function Home() {
         </div>
         <Image src="/socrates.png" alt="Right Image" width={300} height={300} className="right-image" />
       </section>
+
+      <section className="services">
+        <h1 className="text-gradient-underline"><b>Our Services</b></h1>
+        <div className="cards-container">
+          <div className="card">
+            PUT IMAGE HERE
+            <p>put text here</p>
+          </div>
+          <div className="card">
+            PUT IMAGE HERE
+            <p>put text here</p>
+          </div>
+          <div className="card">
+            PUT IMAGE HERE
+            <p>put text here</p>
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className="split-screen">
           <section className="left-section">

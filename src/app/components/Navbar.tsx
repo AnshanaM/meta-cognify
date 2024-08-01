@@ -26,8 +26,8 @@ export default function Navbar() {
         </a>
         <p className="nav-bar-item">Github</p>
       </div>
-      <button className="log-in-button">Log In</button>
-      <button className="sign-up-button">Sign Up</button>
+      <button className="log-in-button">Our Bots</button>
+      {/* <button className="sign-up-button">SocraBot</button> */}
       <div className="menu-icon" onClick={toggleMenu}>
         <div></div>
         <div></div>
