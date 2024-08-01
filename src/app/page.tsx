@@ -126,7 +126,7 @@ export default function Home() {
           <section className="right-section">
             <Image src="/socrates.png" alt="Right Image" width={300} height={300} />
             <b><h1>add some attractive text here</h1></b>
-            <button className="learn-more-button" onClick={() => router.push('/ChatPageSocra')}>Chat With Socrabot!</button>
+            <button className="learn-more-button" onClick={() => router.push('/SocraChat')}>Chat With Socrabot!</button>
           </section>
         </div>
       </section>
