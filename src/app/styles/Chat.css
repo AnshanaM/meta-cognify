@@ -11,7 +11,7 @@ body {
 .side-bar {
   background-color: #0e0e25;
   height: 86vh;
-  width:800px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -73,11 +73,34 @@ body {
 }
 
 
-.history {
+.analytics {
   padding: 10px;
   margin: 10px;
   height: 100%;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.progress-bars{
+  height: 150px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-bar-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: left;
+  align-items: center
+}
+
+.progress-bar-wrapper label {
+  width: 125px;
 }
 
 .main {

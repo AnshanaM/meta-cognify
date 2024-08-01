@@ -1,6 +1,8 @@
 "use client"
+
 import React, { useState, FormEvent } from 'react';
 import '../styles/Chat.css';
+import ProgressBar from '../components/ProgressBar'; // Import the ProgressBar component
 
 interface Message {
   id: number;
@@ -12,6 +14,17 @@ const ChatPage = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [clarity, setClarity] = useState(0); // State to manage clarity progress
+  const [completeness, setCompleteness] = useState(0); // State to manage completeness progress
+  const [accuracy, setAccuracy] = useState(0); // State to manage accuracy progress
+  const [showAnalytics,setShowAnalytics] = useState(false);
+
+  const getAnalytics = () => {
+    setShowAnalytics(true);
+    setClarity(75);
+    setCompleteness(85);
+    setAccuracy(90);
+  }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -22,6 +35,7 @@ const ChatPage = () => {
     if (input.trim() === '') return;
 
     setLoading(true);
+
     const userMessage: Message = { role: 'user', content: input, id: Date.now() };
     const updatedMessages = [...messages, userMessage];
     setMessages(updatedMessages);
@@ -42,6 +56,12 @@ const ChatPage = () => {
         };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
       }
+
+      // // Update progress values based on response data
+      // setClarity(data.clarity || 0);
+      // setCompleteness(data.completeness || 0);
+      // setAccuracy(data.accuracy || 0);
+
     } catch (error) {
       console.error('Error fetching the chat response:', error);
     }
@@ -50,37 +70,43 @@ const ChatPage = () => {
     setInput('');
   };
 
-  const renderResponse = () => {
-    return messages.map((m) => (
-      <div key={m.id} className={`message ${m.role}`}>
-        {m.role === 'assistant' && (
-          <img src='/bot.png' alt='Noobert' className='avatar' />
-        )}
-        <div className='message-content'>{m.content}</div>
-        {m.role === 'user' && (
-          <img src='/user.png' alt='User' className='avatar' />
-        )}
-      </div>
-    ));
-  };
-
   return (
     <div className="app">
       <section className="side-bar">
-        <button className='new-topic'>Get Analytics</button>
-        <section className="history">
-          <div>
-            add analytics
+        <button className='new-topic' onClick={getAnalytics}>Get Analytics</button>
+        <section className="analytics">
+        {showAnalytics &&
+          <div className='progress-bars'>
+            <div className='progress-bar-wrapper'>
+              <label>Clarity</label>
+              <ProgressBar progress={clarity} color="#8D1F66"/>
+            </div>
+            <div className='progress-bar-wrapper'>
+              <label>Completeness</label>
+              <ProgressBar progress={completeness} color='#6F1C84'/>
+            </div>
+            <div className='progress-bar-wrapper'>
+              <label>Accuracy</label>
+              <ProgressBar progress={accuracy} color='#481888'/>
+            </div>            
           </div>
+        }
         </section>
-        {/* <nav>
-          <p>Powered by AI71</p>
-        </nav> */}
       </section>
       <section className='main'>
         <h1>Noobert</h1>
         <ul className='feed'>
-          {renderResponse()}
+          {messages.map((m) => (
+            <div key={m.id} className={`message ${m.role}`}>
+              {m.role === 'assistant' && (
+                <img src='/bot.png' alt='Noobert' className='avatar' />
+              )}
+              <div className='message-content'>{m.content}</div>
+              {m.role === 'user' && (
+                <img src='/user.png' alt='User' className='avatar' />
+              )}
+            </div>
+          ))}
         </ul>
         <form className="bottom-section" onSubmit={handleSubmit}>
           {loading && <div className="loading-dots"><span>.</span><span>.</span><span>.</span></div>}
