@@ -37,6 +37,42 @@ body {
   margin: 10px;
 } */
 
+
+/* Loading dots animation */
+.loading-dots {
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #888;
+  align-items: left;
+}
+
+.loading-dots span {
+  animation: blink 1s infinite;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+
 .history {
   padding: 10px;
   margin: 10px;
