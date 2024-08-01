@@ -22,20 +22,21 @@ const ChatPage = () => {
     if (input.trim() === '') return;
 
     const userMessage: Message = { role: 'user', content: input, id: Date.now() };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
 
-    // Send the user's message to the server
+    // Send the entire message history to the server
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: [{ role: 'user', content: input }] }),
+      body: JSON.stringify({ messages: updatedMessages }),
     });
 
     const data = await response.json();
-    if (data.choices && data.choices[0].message.content) {
+    if (data.assistantMessageContent) {
       const botMessage: Message = {
         role: 'assistant',
-        content: data.choices[0].message.content,
+        content: data.assistantMessageContent,
         id: Date.now() + 1,
       };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
@@ -68,8 +69,6 @@ const ChatPage = () => {
       </div>
     ));
   };
-  
-  
 
   return (
     <div className="app">
