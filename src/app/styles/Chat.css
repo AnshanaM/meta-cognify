@@ -24,8 +24,8 @@ body {
   border-radius: 5px;
   padding: 10px;
   width: 100%;
-  color: rgba(255, 255, 255, 0.5);
-  border: solid 1px rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+  border: solid 1px rgba(255, 255, 255, 0.9);
   background: #01011B;
 }
 
@@ -33,7 +33,7 @@ body {
   cursor: pointer;
   color: #01011B;
   border: solid 1px #01011B;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 
@@ -112,6 +112,12 @@ body {
   max-height: 500px;
 }
 
+.feedback p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: large;
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .feedback::-webkit-scrollbar{
   width: 5px;
 }
@@ -136,6 +142,20 @@ body {
   text-align: center;
   padding: 10px;
 }
+
+.topic-input {
+  width: 650px;
+  border: none;
+  /* border: 1px solid #0e0e25; */
+  background-color: transparent;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+/* 
+.topic-input:focus {
+  outline: rgba(255, 255, 255, 0.75);
+} */
 
 .info {
   color: rgba(255, 255, 255, 0.5);

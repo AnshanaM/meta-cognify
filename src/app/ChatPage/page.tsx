@@ -17,20 +17,62 @@ const ChatPage = () => {
   const [clarity, setClarity] = useState(0);
   const [completeness, setCompleteness] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
+  const [areasOfImprovement, setAreasOfImprovement] = useState("");
   const [showAnalytics, setShowAnalytics] = useState(false);
+  const [isTopicSet, setIsTopicSet] = useState(false);
+  const [topic, setTopic] = useState("");
 
-  const getAnalytics = () => {
-    setShowAnalytics(true);
-    setClarity(75);
-    setCompleteness(85);
-    setAccuracy(90);
+  const clickAnalytics = async () => {
+    const analysisRequestMessage = {
+      role: 'user',
+      content: "Provide your analysis using the following template without adding extra sentences or words: Template: Clarity: X/10 Accuracy: X/10 Completeness: X/10 Areas of Improvement: Rate the student's clarity, accuracy, and completeness out of 10. Replace \"X\" with a number from 0 to 10 based on the student's performance. The \"Areas of Improvement\" section should be filled based on the knowledge gaps you identified during the explanation. Do not use any new line characters."
+    };
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [...messages, analysisRequestMessage] }),
+      });
+
+      const data = await response.json();
+      const analysisResponse = data.assistantMessageContent;
+
+      const clarityMatch = analysisResponse.match(/Clarity: (\d+)\/10/);
+      const accuracyMatch = analysisResponse.match(/Accuracy: (\d+)\/10/);
+      const completenessMatch = analysisResponse.match(/Completeness: (\d+)\/10/);
+      const areasOfImprovementMatch = analysisResponse.match(/Areas of Improvement: (.+)/);
+
+      const clarityScore = clarityMatch ? parseInt(clarityMatch[1], 10) * 10 : 0;
+      const accuracyScore = accuracyMatch ? parseInt(accuracyMatch[1], 10) * 10 : 0;
+      const completenessScore = completenessMatch ? parseInt(completenessMatch[1], 10) * 10 : 0;
+      const areasOfImprovementText = areasOfImprovementMatch ? areasOfImprovementMatch[1] : '';
+
+      setShowAnalytics(true);
+      setClarity(clarityScore);
+      setCompleteness(completenessScore);
+      setAccuracy(accuracyScore);
+      setAreasOfImprovement(areasOfImprovementText);
+
+    } catch (error) {
+      console.error('Error fetching analytics:', error);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
+  const handleTopicChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTopic(e.target.value);
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    if (!isTopicSet) {
+      setTopic(topic)
+      setIsTopicSet(true)
+      setInput("I would like to teach you about "+topic)
+    }
     e.preventDefault();
     if (input.trim() === '') return;
 
@@ -57,11 +99,6 @@ const ChatPage = () => {
         setMessages((prevMessages) => [...prevMessages, botMessage]);
       }
 
-      // Uncomment the following lines if you want to update progress values based on response data
-      // setClarity(data.clarity || 0);
-      // setCompleteness(data.completeness || 0);
-      // setAccuracy(data.accuracy || 0);
-
     } catch (error) {
       console.error('Error fetching the chat response:', error);
     }
@@ -70,13 +107,12 @@ const ChatPage = () => {
     setInput('');
   };
 
-  // Calculate the average progress for the ring
   const averageProgress: number = parseFloat(((clarity + completeness + accuracy) / 3).toFixed(1));
 
   return (
     <div className="app">
       <section className="side-bar">
-        {/* <button className='new-topic' onClick={getAnalytics}>Get Analytics</button> */}
+        <button className='get-analytics' onClick={clickAnalytics}>Get Analytics</button>
         <section className="analytics">
           {showAnalytics &&
             <section className='content'>
@@ -101,58 +137,17 @@ const ChatPage = () => {
                 </div>
               </div>
               <div className='feedback'>
-                FEEDBACKhfefherhffbvhdbvjhdfvhd
-                bfrefbeuirfuierfhehifieifre
-                fhueifiubeufibeuibviubefibvbfv
-                vhfuivfuvbfidvhdfhvhdvd
-                vfhibufdivudbvbdfioiofdhhfjnvoherhe
-                fbfuohfiefhehriugruuirbenvierue;ivufHFEURIEERFHVF
-                UIFHRFIEBHBDFJKVIOUWEIGHRFDHGIFOJENFDVFIUROEFBHE
-                BFFIOERFVHFUOIRJBFVKURIIFJBDNIOWUIEHFN
-                HEJIOUIGROFIUHBVNCCB JIIOJHFOIHUIGTYUEHJCOUIREHCB
-                FEEDBACKhfefherhffbvhdbvjhdfvhd
-                bfrefbeuirfuierfhehifieifre
-                fhueifiubeufibeuibviubefibvbfv
-                vhfuivfuvbfidvhdfhvhdvd
-                vfhibufdivudbvbdfioiofdhhfjnvoherhe
-                fbfuohfiefhehriugruuirbenvierue;ivufHFEURIEERFHVF
-                UIFHRFIEBHBDFJKVIOUWEIGHRFDHGIFOJENFDVFIUROEFBHE
-                BFFIOERFVHFUOIRJBFVKURIIFJBDNIOWUIEHFN
-                HEJIOUIGROFIUHBVNCCB JIIOJHFOIHUIGTYUEHJCOUIREHCB
-                FEEDBACKhfefherhffbvhdbvjhdfvhd
-                bfrefbeuirfuierfhehifieifre
-                fhueifiubeufibeuibviubefibvbfv
-                vhfuivfuvbfidvhdfhvhdvd
-                vfhibufdivudbvbdfioiofdhhfjnvoherhe
-                fbfuohfiefhehriugruuirbenvierue;ivufHFEURIEERFHVF
-                UIFHRFIEBHBDFJKVIOUWEIGHRFDHGIFOJENFDVFIUROEFBHE
-                BFFIOERFVHFUOIRJBFVKURIIFJBDNIOWUIEHFN
-                HEJIOUIGROFIUHBVNCCB JIIOJHFOIHUIGTYUEHJCOUIREHCB'FEEDBACKhfefherhffbvhdbvjhdfvhd
-                bfrefbeuirfuierfhehifieifre
-                fhueifiubeufibeuibviubefibvbfv
-                vhfuivfuvbfidvhdfhvhdvd
-                vfhibufdivudbvbdfioiofdhhfjnvoherhe
-                fbfuohfiefhehriugruuirbenvierue;ivufHFEURIEERFHVF
-                UIFHRFIEBHBDFJKVIOUWEIGHRFDHGIFOJENFDVFIUROEFBHE
-                BFFIOERFVHFUOIRJBFVKURIIFJBDNIOWUIEHFN
-                HEJIOUIGROFIUHBVNCCB JIIOJHFOIHUIGTYUEHJCOUIREHCB
-                FEEDBACKhfefherhffbvhdbvjhdfvhd
-                bfrefbeuirfuierfhehifieifre
-                fhueifiubeufibeuibviubefibvbfv
-                vhfuivfuvbfidvhdfhvhdvd
-                vfhibufdivudbvbdfioiofdhhfjnvoherhe
-                fbfuohfiefhehriugruuirbenvierue;ivufHFEURIEERFHVF
-                UIFHRFIEBHBDFJKVIOUWEIGHRFDHGIFOJENFDVFIUROEFBHE
-                BFFIOERFVHFUOIRJBFVKURIIFJBDNIOWUIEHFN
-                HEJIOUIGROFIUHBVNCCB JIIOJHFOIHUIGTYUEHJCOUIREHCB
+                <b><p>Areas of Improvement:</p></b>
+              </div>
+              <div className='feedback'>
+                {areasOfImprovement}
               </div>
             </section>
           }
         </section>
-        <button className='get-analytics' onClick={getAnalytics}>Get Analytics</button>
       </section>
       <section className='main'>
-        <h1>Noobert</h1>
+        {!topic ? null : <h1>{topic}</h1>}
         <ul className='feed'>
           {messages.map((m) => (
             <div key={m.id} className={`message ${m.role}`}>
@@ -169,12 +164,22 @@ const ChatPage = () => {
         <form className="bottom-section" onSubmit={handleSubmit}>
           {loading && <div className="loading-dots"><span>.</span><span>.</span><span>.</span></div>}
           <div className='input-container'>
-            <input
-              className='input-field'
-              value={input}
-              placeholder='Say something...'
-              onChange={handleInputChange}
-            />
+            {
+              !isTopicSet ? 
+                <input
+                  className='input-field'
+                  value={topic}
+                  placeholder='Enter a topic to start study session...'
+                  onChange={handleTopicChange}
+                />
+              : 
+                <input
+                  className='input-field'
+                  value={input}
+                  placeholder={`Explain ${topic} ...`}
+                  onChange={handleInputChange}
+                />
+            }
             <button type="submit" className='submit'>↑</button>
           </div>
           <p className='info'>Powered by AI71 Falcon 2 180B model.</p>
