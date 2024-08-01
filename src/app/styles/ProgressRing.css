@@ -1,0 +1,14 @@
+ 
+  .progress-ring__background {
+    stroke: #01011B;
+  }
+  
+  .progress-ring__progress {
+    stroke: linear-gradient(to right, #8D1F66, #6F1C84, #481888);
+    transition: stroke-dashoffset 0.35s;
+  }
+  
+  .progress-ring__text {
+    font-family: Arial, sans-serif;
+  }
+  

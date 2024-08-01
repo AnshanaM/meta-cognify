@@ -92,7 +92,7 @@ export default function Home() {
                   <b>Get a detailed analysis and feedback on possible knowledge gaps!</b>
                 </div>
               </div>
-            </div>
+          </div>
           </div>
         </div>
       </section>
