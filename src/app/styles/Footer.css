@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    height: 7vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(240, 240, 240);
+    padding: 1rem;
+    border-top: 1px solid #01011B;
+  }
+  
+  .footer p {
+    color: #01011B;
+  }
+  

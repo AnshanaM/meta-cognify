@@ -88,6 +88,18 @@ button {
   background-color: rgb(238, 238, 238);
 }
 
+.sign-up-button {
+  color: #01011B;
+  border: solid 1.5px #01011B;
+  background-color: rgb(238, 238, 238);
+}
+
+.sign-up-button:hover {
+  color: rgb(238, 238, 238);
+  border: solid 1.5px rgb(238, 238, 238);
+  background-color: #01011B;
+}
+
 .menu-icon {
   display: none;
   cursor: pointer;
