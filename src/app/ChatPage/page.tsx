@@ -25,7 +25,14 @@ const ChatPage = () => {
   const clickAnalytics = async () => {
     const analysisRequestMessage = {
       role: 'user',
-      content: "Provide your analysis using the following template without adding extra sentences or words: Template: Clarity: X/10 Accuracy: X/10 Completeness: X/10 Areas of Improvement: Rate the student's clarity, accuracy, and completeness out of 10. Replace \"X\" with a number from 0 to 10 based on the student's performance. The \"Areas of Improvement\" section should be filled based on the knowledge gaps you identified during the explanation. Do not use any new line characters."
+      content: "Provide your analysis using the following template without adding extra sentences or words. Do not use any new line characters."
+                +"Template: Clarity: X/10 Accuracy: X/10 Completeness: X/10"
+                +"Areas of Improvement: Provide specific and actionable feedback on the student's explanation. Highlight any gaps in understanding, missed details, or inaccuracies. Suggest ways the student can improve their explanation."
+                +"Instructions for Rating:"
+                +"Clarity: Evaluate how clearly the student communicated their explanation. Was it easy to follow and understand?"
+                +"Accuracy: Assess the correctness of the information provided by the student. Did they convey the right facts?"
+                +"Completeness: Determine how thoroughly the student covered the topic. Did they include all relevant points and details?"
+                +"Replace 'X' with a number from 0 to 10 based on the student's performance. The 'Areas of Improvement' section should be filled based on the knowledge gaps you identified during the explanation. Be specific and constructive in your feedback."
     };
 
     try {
@@ -41,12 +48,12 @@ const ChatPage = () => {
       const clarityMatch = analysisResponse.match(/Clarity: (\d+)\/10/);
       const accuracyMatch = analysisResponse.match(/Accuracy: (\d+)\/10/);
       const completenessMatch = analysisResponse.match(/Completeness: (\d+)\/10/);
-      const areasOfImprovementMatch = analysisResponse.match(/Areas of Improvement: (.+)/);
+      const areasOfImprovementMatch = analysisResponse.match(/Areas of Improvement:\s*([\s\S]*)/);
 
       const clarityScore = clarityMatch ? parseInt(clarityMatch[1], 10) * 10 : 0;
       const accuracyScore = accuracyMatch ? parseInt(accuracyMatch[1], 10) * 10 : 0;
       const completenessScore = completenessMatch ? parseInt(completenessMatch[1], 10) * 10 : 0;
-      const areasOfImprovementText = areasOfImprovementMatch ? areasOfImprovementMatch[1] : '';
+      const areasOfImprovementText = areasOfImprovementMatch ? areasOfImprovementMatch[1].trim() : '';
 
       setShowAnalytics(true);
       setClarity(clarityScore);
@@ -71,42 +78,48 @@ const ChatPage = () => {
     if (!isTopicSet) {
       setTopic(topic)
       setIsTopicSet(true)
-      setInput("I would like to teach you about "+topic)
+      setInput("I would like to teach you about " + topic)
     }
     e.preventDefault();
     if (input.trim() === '') return;
-
+  
     setLoading(true);
-
+  
     const userMessage: Message = { role: 'user', content: input, id: Date.now() };
     const updatedMessages = [...messages, userMessage];
     setMessages(updatedMessages);
-
+  
     try {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: updatedMessages }),
       });
-
+  
       const data = await response.json();
       if (data.assistantMessageContent) {
+        // Remove 'User:' from the end if it exists
+        let content = data.assistantMessageContent;
+        if (content.endsWith('User:')) {
+          content = content.slice(0, -5).trim();
+        }
+  
         const botMessage: Message = {
           role: 'assistant',
-          content: data.assistantMessageContent,
+          content: content,
           id: Date.now() + 1,
         };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
       }
-
+  
     } catch (error) {
       console.error('Error fetching the chat response:', error);
     }
-
+  
     setLoading(false);
     setInput('');
   };
-
+  
   const averageProgress: number = parseFloat(((clarity + completeness + accuracy) / 3).toFixed(1));
 
   return (
@@ -138,9 +151,7 @@ const ChatPage = () => {
               </div>
               <div className='feedback'>
                 <b><p>Areas of Improvement:</p></b>
-              </div>
-              <div className='feedback'>
-                {areasOfImprovement}
+                <p>{areasOfImprovement}</p>
               </div>
             </section>
           }
