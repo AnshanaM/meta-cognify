@@ -1,11 +1,11 @@
 # 🌟 MetaCognify
 
-**Hackathon:** [Falcon Hackathon by lablab.ai]  
-**Team:** [The Falconers]
+**Hackathon:** Falcon Hackathon by lablab.ai
+**Team:** The Falconers
 
 ## 🚀 Introduction
 
-[Project Name] is an innovative solution developed during the [] to [briefly describe the problem your project addresses]. Our project leverages cutting-edge technology to [briefly describe your solution and its benefits].
+MetaCognify is an innovative solution developed during the Falcon Hackathon to . Our project leverages cutting-edge technology to [briefly describe your solution and its benefits].
 
 ## 🎯 Features
 
