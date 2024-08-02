@@ -9,7 +9,7 @@
 }
 
 * {
-  color: rgb(238, 238, 238);
+  color: rgb(200, 200, 200);
   font-family: Recoleta;
   font-variant-ligatures: none;
   -webkit-font-variant-ligatures: none;
@@ -27,7 +27,7 @@
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(200, 200, 200);
 }
 
 .logo-text {
@@ -77,15 +77,15 @@ button {
 }
 
 .log-in-button {
-  color: rgb(238, 238, 238);
-  border: 1px solid rgb(238, 238, 238);
+  color: rgb(200, 200, 200);
+  border: 1px solid rgb(200, 200, 200);
   background-color: #01011B;
 }
 
 .log-in-button:hover {
   color: #01011B;
   border: 1.5px solid #01011B;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(200, 200, 200);
   cursor: pointer;
 }
 

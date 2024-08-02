@@ -10,7 +10,7 @@
   }
   
   .socrates {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(200, 200, 200);
     display:flex;
     flex-direction: row;
     gap: 1rem;

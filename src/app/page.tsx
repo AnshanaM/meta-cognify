@@ -17,7 +17,7 @@ export default function Home() {
             <h1 className="text-gradient-underline"><b>Retain.</b></h1>
             <h1 className="text-gradient-underline"><b>Revolutionize.</b></h1>
           </div>
-          <p className="paragraph-style">Students, this is your calling. Struggling to grasp new knowledge? Boost your understanding and track your progress using our <b className="falcon-text">Falcon</b>-powered self-study tools.</p>
+          <p className="paragraph-style">Struggling to grasp new knowledge? Boost your understanding and track your progress using our <b className="falcon-text">Falcon</b>-powered self-study tools.</p>
           <p><i>Discover the power within you to excel beyond limits.</i></p>
           <div className="button-group">
             {/* <button className="sign-up-button">Sign Up</button> */}
@@ -43,7 +43,11 @@ export default function Home() {
       </section>
 
       <section className="services">
-        <h1 className="text-gradient-underline"><b>Our Services</b></h1>
+        <b><p>THE ULTIMATE SELF-STUDY RESOURCE</p></b>
+        <i><b><h1 className="heading-text">
+          "Too often, we teach students <span className="highlight-text">what</span> to think, not <span className="highlight-text">how</span> to think."
+        </h1></b></i>
+        <h3>Finding the best learning approach for you</h3>
         <div className="cards-container">
           <div className="card">
             PUT IMAGE HERE
