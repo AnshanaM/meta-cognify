@@ -105,10 +105,10 @@ const SocraChat = () => {
       if (data.assistantMessageContent) {
         // Remove 'User:' from the end if it exists
         let content = data.assistantMessageContent;
-        if (content.endsWith('User:')) {
-          content = content.slice(0, -5).trim();
-        }
-  
+
+        content = content.replace(/#+\s*$/, '').trim(); // remove trailing hashtags
+        content = content.replace(/User:\s*$/, '').trim(); // Remove trailing "User:"
+
         const botMessage: Message = {
           role: 'assistant',
           content: content,

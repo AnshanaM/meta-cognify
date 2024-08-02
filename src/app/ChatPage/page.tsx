@@ -48,7 +48,7 @@ const ChatPage = () => {
       const clarityMatch = analysisResponse.match(/Clarity: (\d+)\/10/);
       const accuracyMatch = analysisResponse.match(/Accuracy: (\d+)\/10/);
       const completenessMatch = analysisResponse.match(/Completeness: (\d+)\/10/);
-      const areasOfImprovementMatch = analysisResponse.match(/Areas of Improvement:\s*([\s\S]*)/);
+      const areasOfImprovementMatch = analysisResponse.match(/Areas of Improvement:\s*([\s\S]*?)\s*(?:User:\s*)?$/);
 
       const clarityScore = clarityMatch ? parseInt(clarityMatch[1], 10) * 10 : 0;
       const accuracyScore = accuracyMatch ? parseInt(accuracyMatch[1], 10) * 10 : 0;
@@ -98,12 +98,11 @@ const ChatPage = () => {
   
       const data = await response.json();
       if (data.assistantMessageContent) {
-        // Remove 'User:' from the end if it exists
+        // Remove trailing hashtags if they exist (they come due to internal formatting sometimes?)
         let content = data.assistantMessageContent;
-        if (content.endsWith('User:')) {
-          content = content.slice(0, -5).trim();
-        }
-  
+        content = content.replace(/#+\s*$/, '').trim(); // remove trailing hashtags
+        content = content.replace(/User:\s*$/, '').trim(); // Remove trailing "User:"
+
         const botMessage: Message = {
           role: 'assistant',
           content: content,

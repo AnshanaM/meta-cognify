@@ -75,7 +75,7 @@ export default function About() {
                   <Image src="/ask.gif" alt="Ask Questions" width={50} height={50} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Ask thought-provoking questions.</b>
+                  <b>Choose a topic or concept.</b>
                 </div>
               </div>
               <div className="block block-gradient">
@@ -83,7 +83,7 @@ export default function About() {
                   <Image src="/explore.gif" alt="Explore Topics" width={70} height={70} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Explore topics through inquiry.</b>
+                  <b>Answer Socrabot's questions thoroughly.</b>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function About() {
                   <Image src="/understand.gif" alt="Understand Concepts" width={80} height={80} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Gain deeper understanding.</b>
+                  <b>Socrabot asks thought-provoking Socratic questions.</b>
                 </div>
               </div>
               <div className="block block-black">
@@ -101,7 +101,7 @@ export default function About() {
                   <Image src="/discover.gif" alt="Discover Insights" width={50} height={50} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Discover new insights and perspectives.</b>
+                  <b>Get detailed analytics and feedback based on how well you did.</b>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function About() {
             <i><p className="paragraph-style">“A technique of philosophical investigation that emphasizes the use of conversation and inquiry to explore difficult ideas and concepts.”</p></i>
             <br />
             <p className="paragraph-style">
-              Is there a challenging topic you want to explore for the first time? Have a thoughtful conversation with SocraBot, who will craft questions in a way that you will eventually discover and realize the concept on your own!
+              One way to enhance your critical thinking is to experience Socratic questioning. Have a thoughtful conversation with SocraBot about a specific topic or concept. Socrabot will craft questions in a way that you will eventually discover and realize the concept on your own!
             </p>
             <br />
             <button className="log-in-button">Try Now!</button>
