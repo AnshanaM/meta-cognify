@@ -14,9 +14,10 @@
 }
 
 main, body {
-  background-color: #01011B;
+  /* background-color: #01011B; */
   color: rgb(200, 200, 200);
   margin: 0;
+  padding: 0;
 }
 
 * {
@@ -35,6 +36,10 @@ button {
   border-radius: 50px;
   width: fit-content;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover{
+  cursor: pointer;
 }
 
 .sign-up-button {
@@ -60,6 +65,7 @@ button {
 
 .main-content {
   /* margin-top: 4vh; */
+  background-color: #01011B;
   display: flex;
   gap: 4rem;
   justify-content: center;
@@ -349,31 +355,47 @@ button {
   border-radius: 2px; /* Optional: to make the underline ends rounded */
 }
 
+
 .split-screen {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 90vh;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
-
 
 .left-section {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  gap: 1.5rem;
   background-color: #01011B;
   color: rgb(200, 200, 200);
   width: 50vw;
   justify-items: center;
   align-items: center;
+  min-height: 80vh;
 }
-
 .right-section {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  gap: 1.5rem;
   background-color: #0e0e25;
   color: rgb(200, 200, 200);
   width: 50vw;
   justify-items: center;
   align-items: center;
+  min-height: 80vh;
+}
+
+
+.left-section img{
+  height: 200px;
+}
+
+.right-section img{
+  height: 200px;
 }

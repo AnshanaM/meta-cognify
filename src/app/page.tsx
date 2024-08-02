@@ -59,14 +59,18 @@ export default function Home() {
       <section>
         <div className="split-screen">
           <section className="left-section">
-            <Image src="/feynman.png" alt="Left Image" width={300} height={300} />
-            <h1>add some attractive text here</h1>
-            <button className="learn-more-button" onClick={() => router.push('/ChatPage')}>Chat With Noobert!</button>
+            <h2>Meet Noobert, the novice.</h2>
+            <img src="/noobert.png" alt="Left Image"/>
+            <h1>Teach Noobert and you'll teach yourself!</h1>
+            <p>Inspired by the Feynman Technique.</p>
+            <button className="learn-more-button" onClick={() => router.push('/ChatPage')}>Try Now!</button>
           </section>
           <section className="right-section">
-            <Image src="/socrates.png" alt="Right Image" width={300} height={300} />
-            <b><h1>add some attractive text here</h1></b>
-            <button className="learn-more-button" onClick={() => router.push('/SocraChat')}>Chat With Socrabot!</button>
+            <h2>Meet Socrabot, the challenger.</h2>
+            <img src="/socrabot.png" alt="Right Image" />
+            <h1>Challenge Socrabot and deepen your knowledge!</h1>
+            <p>Inspired by the Socratic Method.</p>
+            <button className="learn-more-button" onClick={() => router.push('/SocraChat')}>Try Now!</button>
           </section>
         </div>
       </section>
