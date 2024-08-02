@@ -24,8 +24,8 @@ body {
   border-radius: 5px;
   padding: 10px;
   width: 100%;
-  color: rgba(255, 255, 255, 0.9);
-  border: solid 1px rgba(255, 255, 255, 0.9);
+  color: rgb(200, 200, 200);
+  border: solid 1px rgb(200, 200, 200);
   background: #01011B;
 }
 
@@ -33,17 +33,24 @@ body {
   cursor: pointer;
   color: #01011B;
   border: solid 1px #01011B;
-  background: rgba(255, 255, 255, 0.9);
+  background:rgb(200, 200, 200);
 }
 
-
-.analytics {
-  padding: 10px;
-  height: 100%;
-  border-radius: 5px;
-  gap: 1rem;
+.analytics{
+padding: 10px;
+width: 100%;
+height: 100%;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
+.analytics-loader {
+height: 70px;
+display: block;
+margin: 0 auto;
+}
 
 .graphs {
   display: flex;
@@ -109,7 +116,7 @@ body {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   overflow-y: auto;
   box-sizing: border-box;
-  max-height: 500px;
+  max-height: 250px;
 }
 
 .feedback p {
@@ -158,7 +165,7 @@ body {
 } */
 
 .info {
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff80;
   font-size: 11px;
   padding: 10px;
 }

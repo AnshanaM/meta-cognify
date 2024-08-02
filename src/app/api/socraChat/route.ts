@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 const AI71_BASE_URL = "https://api.ai71.ai/v1/";
-const API_KEY = "api71-api-33f78968-1a35-48b8-b659-30b8321942c7";
+const API_KEY = process.env.AI71_API_KEY;
 
 export const runtime = 'edge';
 

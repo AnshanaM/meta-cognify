@@ -123,39 +123,46 @@ const ChatPage = () => {
 
   return (
     <div className="app">
-      <section className="side-bar">
-        <button className='get-analytics' onClick={clickAnalytics}>Get Analytics</button>
-        <section className="analytics">
-          {showAnalytics &&
-            <section className='content'>
-              <div className='graphs'>
-                <div className='progress-bars'>
-                  <div className='progress-bar-wrapper'>
-                    <label>Clarity</label>
-                    <ProgressBar progress={clarity} color="#8D1F66" />
+      {isTopicSet &&
+        <section className="side-bar">
+          <button className='get-analytics' onClick={clickAnalytics}>Get Analytics</button>
+          <section className="analytics">
+            {showAnalytics?
+              <div className='content'>
+                <div className='graphs'>
+                  <div className='progress-bars'>
+                    <div className='progress-bar-wrapper'>
+                      <label>Clarity</label>
+                      <ProgressBar progress={clarity} color="#8D1F66" />
+                    </div>
+                    <div className='progress-bar-wrapper'>
+                      <label>Completeness</label>
+                      <ProgressBar progress={completeness} color='#6F1C84' />
+                    </div>
+                    <div className='progress-bar-wrapper'>
+                      <label>Accuracy</label>
+                      <ProgressBar progress={accuracy} color='#481888' />
+                    </div>
                   </div>
-                  <div className='progress-bar-wrapper'>
-                    <label>Completeness</label>
-                    <ProgressBar progress={completeness} color='#6F1C84' />
-                  </div>
-                  <div className='progress-bar-wrapper'>
-                    <label>Accuracy</label>
-                    <ProgressBar progress={accuracy} color='#481888' />
+                  <div className='progress-ring-wrapper'>
+                    <ProgressRing progress={averageProgress} radius={50} stroke={10} />
+                    <label>Average</label>
                   </div>
                 </div>
-                <div className='progress-ring-wrapper'>
-                  <ProgressRing progress={averageProgress} radius={50} stroke={10} />
-                  <label>Average</label>
+                <div className='feedback'>
+                  <b><p>Areas of Improvement:</p></b>
+                  <p>{areasOfImprovement}</p>
                 </div>
               </div>
-              <div className='feedback'>
-                <b><p>Areas of Improvement:</p></b>
-                <p>{areasOfImprovement}</p>
-              </div>
-            </section>
+          :
+          <div>
+          <img src='analytics.gif' className='analytics-loader'/>  
+          <p>Analyzing...</p>
+          </div>
           }
+          </section>
         </section>
-      </section>
+      }
       <section className='main'>
         {!topic ? null : <h1>{topic}</h1>}
         <ul className='feed'>
@@ -173,6 +180,7 @@ const ChatPage = () => {
         </ul>
         <form className="bottom-section" onSubmit={handleSubmit}>
           {loading && <div className="loading-dots"><span>.</span><span>.</span><span>.</span></div>}
+          {!showAnalytics && 
           <div className='input-container'>
             {
               !isTopicSet ? 
@@ -192,6 +200,7 @@ const ChatPage = () => {
             }
             <button type="submit" className='submit'>↑</button>
           </div>
+          }
           <p className='info'>Powered by AI71 Falcon 2 180B model.</p>
         </form>
       </section>

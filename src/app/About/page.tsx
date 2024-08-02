@@ -68,14 +68,14 @@ export default function About() {
 
       <section>
         <div className="socrates">
-        <div className="blocks">
+          <div className="blocks">
             <div className="cols">
-              <div className="block block-black">
+              <div className="block block-grey">
                 <div className="icon">
                   <Image src="/ask.gif" alt="Ask Questions" width={50} height={50} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Choose a topic or concept.</b>
+                  <b><p>Choose a topic or concept.</p></b>
                 </div>
               </div>
               <div className="block block-gradient">
@@ -83,7 +83,7 @@ export default function About() {
                   <Image src="/explore.gif" alt="Explore Topics" width={70} height={70} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Answer Socrabot's questions thoroughly.</b>
+                  <b><p>Answer Socrabot's questions thoroughly.</p></b>
                 </div>
               </div>
             </div>
@@ -93,15 +93,15 @@ export default function About() {
                   <Image src="/understand.gif" alt="Understand Concepts" width={80} height={80} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Socrabot asks thought-provoking Socratic questions.</b>
+                  <b><p>Socrabot asks thought-provoking Socratic questions.</p></b>
                 </div>
               </div>
-              <div className="block block-black">
+              <div className="block block-grey">
                 <div className="icon">
                   <Image src="/discover.gif" alt="Discover Insights" width={50} height={50} unoptimized />
                 </div>
                 <div className="block-text">
-                  <b>Get detailed analytics and feedback based on how well you did.</b>
+                  <b><p>Get detailed analytics and feedback based on how well you did.</p></b>
                 </div>
               </div>
             </div>

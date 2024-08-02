@@ -6,6 +6,7 @@ const Footer = () => {
     <div className="footer">
         <p>Created by The Falconers</p>
         <p>Powered by Falcon AI</p>
+        <a href="https://lordicon.com/">Icons by Lordicon.com</a>
     </div>
   );
 };

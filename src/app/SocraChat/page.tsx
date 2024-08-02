@@ -44,6 +44,7 @@ const SocraChat = () => {
         body: JSON.stringify({ messages: [...messages, analysisRequestMessage] }),
       });
 
+      setShowAnalytics(true);
       const data = await response.json();
       const analysisResponse = data.assistantMessageContent;
 
@@ -59,7 +60,7 @@ const SocraChat = () => {
       const rqScore = rqMatch ? parseInt(rqMatch[1], 10) * 10 : 0;
       const areasOfImprovementText = areasOfImprovementMatch ? areasOfImprovementMatch[1].trim() : '';
 
-      setShowAnalytics(true);
+
       setLogicalCoherence(lcScore);
       setConceptualClarity(ccScore);
       setReflectionInsight(riScore);
@@ -129,11 +130,13 @@ const SocraChat = () => {
 
   return (
     <div className="app">
+      {isTopicSet && 
       <section className="side-bar">
         <button className='get-analytics' onClick={clickAnalytics}>Get Analytics</button>
+        
         <section className="analytics">
-          {showAnalytics &&
-            <section className='content'>
+          {showAnalytics ?
+            <div className='content'>
               <div className='graphs'>
                 <div className='progress-bars'>
                   <div className='progress-bar-wrapper'>
@@ -162,10 +165,16 @@ const SocraChat = () => {
                 <b><p>Areas of Improvement:</p></b>
                 <p>{areasOfImprovement}</p>
               </div>
-            </section>
+            </div>
+          :
+          <div>
+            <img src='analytics.gif' className='analytics-loader'/>
+            <p>Analyzing...</p>
+          </div>
           }
         </section>
       </section>
+      }
       <section className='main'>
         {!topic ? null : <h1>{topic}</h1>}
         <ul className='feed'>
@@ -183,6 +192,7 @@ const SocraChat = () => {
         </ul>
         <form className="bottom-section" onSubmit={handleSubmit}>
           {loading && <div className="loading-dots"><span>.</span><span>.</span><span>.</span></div>}
+          {!showAnalytics && 
           <div className='input-container'>
             {
               !isTopicSet ? 
@@ -202,6 +212,8 @@ const SocraChat = () => {
             }
             <button type="submit" className='submit'>↑</button>
           </div>
+          }
+          
           <p className='info'>Powered by AI71 Falcon 2 180B model.</p>
         </form>
       </section>
