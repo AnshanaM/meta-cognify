@@ -37,18 +37,18 @@ export default function Home() {
         <h3>With MetaCognify, achieve deeper understanding and critical thinking skills.</h3>
         <div className="cards-container">
           <div className="card">
-          <Image src="/theBots.png" alt="Intro to bots image" width={300} height={190} style={{ borderRadius: '15px' }}></Image>
-          <h3>Chat Bots Designed for Self-Study</h3>
+          <img src="/theBots.png" alt="Intro to bots image"/>
+          <b><h3>Chat Bots designed for Self-Study</h3></b>
             <p>Meet Noobert and Socrabot, our charming AI chatbots designed to simulate the Feynman Technique and the Socratic Method.</p>
           </div>
           <div className="card">
-          <Image src="/feature22.png" alt="Analytics image" width={300} height={190} style={{ borderRadius: '15px' }}
-/>            <b><h3>Personalized Learning Analytics</h3></b>
+          <img src="/feature22.png" alt="Analytics image"/>            
+          <b><h3>Personalized Learning Analytics</h3></b>
             <p>Using feedback from AI, see how well you understand and explain concepts based on conversations with the chatbots.
             </p>
           </div>
           <div className="card">
-            <Image src="/interaction.png" alt="Interaction image" width={300} height={190} style={{ borderRadius: '15px' }}></Image>
+            <img src="/interaction.png" alt="Interaction image"/>
             <b><h3>Interactive Learning Experience</h3></b>
             <p>Experience an engaging and interactive learning process designed to boost your understanding and perspective of any topic.
             </p>
