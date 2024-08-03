@@ -52,4 +52,4 @@ MetaCognify is an educational tool developed during the 10-day Falcon Hackathon.
 
 ## 🖱️ Live Demo
 
-   - Access the app at `https://meta-cognify.vercel.app/`.
+   - Access the app at [https://meta-cognify.vercel.app/](https://meta-cognify.vercel.app/).
