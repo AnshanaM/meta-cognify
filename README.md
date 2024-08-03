@@ -21,40 +21,29 @@ MetaCognify is an educational tool developed during the 10-day Falcon Hackathon.
 
 ## 🛠️ Technologies
 
-- **Frontend:** React, JavaScript
+- **Frontend:** React, JavaScript, CSS
 - **Backend:** Next.js, TypeScript
-- **API:** OpenAI
-
-## 📸 Screenshots
-
-| Noobert Interaction | Socrabot Interaction |
-|---------------------|----------------------|
-| ![Screenshot 1](link_to_screenshot1) | ![Screenshot 2](link_to_screenshot2) |
-
-| Feedback Analytics  | Overall Dashboard    |
-|---------------------|----------------------|
-| ![Screenshot 3](link_to_screenshot3) | ![Screenshot 4](link_to_screenshot4) |
+- **API:** AI71
 
 ## 💡 How It Works
 
 1. **Setup:**
    - Clone the repository:
      ```bash
-     git clone https://github.com/username/project-name.git
-     cd project-name
+     git clone https://github.com/AnshanaM/meta-cognify.git
+     cd meta-cognify
      ```
    - Install dependencies:
      ```bash
      npm install
      ```
-   - Configure environment variables (if any).
+   - Configure environment variables (your AI71 API key).
 
 2. **Running the App:**
    - Start the development server:
      ```bash
      npm run dev
      ```
-   - Access the app at `http://localhost:3000`.
 
 3. **Using the App:**
    - **Noobert:** Choose a topic and explain it to Noobert, who will ask questions to clarify and deepen understanding.
