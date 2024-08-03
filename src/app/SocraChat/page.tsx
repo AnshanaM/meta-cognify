@@ -52,7 +52,7 @@ const SocraChat = () => {
       const ccMatch = analysisResponse.match(/Conceptual Clarity: (\d+)\/10/);
       const riMatch = analysisResponse.match(/Reflection and Insight: (\d+)\/10/);
       const rqMatch = analysisResponse.match(/Response Quality: (\d+)\/10/);
-      const areasOfImprovementMatch = analysisResponse.match(/Areas of Improvement:\s*([\s\S]*)/);
+      const areasOfImprovementMatch = analysisResponse.match(/Areas of Improvement:\s*([\s\S]*?)\s*(?:User:\s*)?$/);
 
       const lcScore = lcMatch ? parseInt(lcMatch[1], 10) * 10 : 0;
       const ccScore = ccMatch ? parseInt(ccMatch[1], 10) * 10 : 0;
