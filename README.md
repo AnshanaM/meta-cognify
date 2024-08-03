@@ -5,7 +5,7 @@
 
 ## 🚀 Introduction
 
-MetaCognify is an educational tool developed during the 10-day Falcon Hackathon. It leverages the Falcon 180B model to help students improve critical thinking and memory. The platform offers AI-driven simulations of the Feynman Technique and the Socratic Method, which are effective strategies for enhancing cognitive skills.
+MetaCognify is an educational tool developed during the 10-day Falcon Hackathon. It leverages the Falcon 180B model to help students improve critical thinking and memory. The platform offers AI-driven simulations of two self-study techniques, the Feynman Technique and the Socratic Method, which are effective strategies for enhancing cognitive skills.
 
 ## Self-Study Techniques
 
