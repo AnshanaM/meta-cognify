@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useRef, useEffect } from 'react';
 import '../styles/Chat.css';
 import ProgressBar from '../components/ProgressBar';
 import ProgressRing from '../components/ProgressRing';
@@ -21,6 +21,8 @@ const ChatPage = () => {
   const [showAnalytics, setShowAnalytics] = useState(false);
   const [isTopicSet, setIsTopicSet] = useState(false);
   const [topic, setTopic] = useState("");
+
+  const feedEndRef = useRef<HTMLDivElement | null>(null);
 
   const clickAnalytics = async () => {
     const analysisRequestMessage = {
@@ -118,6 +120,10 @@ const ChatPage = () => {
     setLoading(false);
     setInput('');
   };
+
+  useEffect(() => {
+    feedEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
   
   const averageProgress: number = parseFloat(((clarity + completeness + accuracy) / 3).toFixed(1));
 
@@ -177,6 +183,7 @@ const ChatPage = () => {
               )}
             </div>
           ))}
+          <div ref={feedEndRef} />
         </ul>
         <form className="bottom-section" onSubmit={handleSubmit}>
           {loading && <div className="loading-dots"><span>.</span><span>.</span><span>.</span></div>}

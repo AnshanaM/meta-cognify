@@ -23,7 +23,7 @@ export default function About() {
               Test your understanding by teaching a topic to Noobert, our AI bot. As you explain, Noobert asks questions a beginner would ask. At the end of your explanation, find out how well you did!
             </p>
             <br />
-            <button className="learn-more-button">Try Now!</button>
+            <button className="learn-more-button" onClick={() => router.push('/ChatPage')}>Try Now!</button>
           </div>
           <div className="blocks">
             <div className="cols">
@@ -116,7 +116,7 @@ export default function About() {
               One way to enhance your critical thinking is to experience Socratic questioning. Have a thoughtful conversation with SocraBot about a specific topic or concept. Socrabot will craft questions in a way that you will eventually discover and realize the concept on your own!
             </p>
             <br />
-            <button className="log-in-button">Try Now!</button>
+            <button className="log-in-button" onClick={() => router.push('/SocraChat')}>Try Now!</button>
           </div>
         </div>
       </section>

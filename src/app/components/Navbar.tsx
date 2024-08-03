@@ -24,10 +24,10 @@ export default function Navbar() {
         <a href="https://falconllm.tii.ae/falcon-180b.html" className="nav-bar-item" target="_blank" rel="noopener noreferrer">
           Models
         </a>
-        <p className="nav-bar-item">Github</p>
+        <a href="https://github.com/AnshanaM/meta-cognify" className="nav-bar-item" target="_blank" rel="noopener noreferrer" >Github</a>
       </div>
-      <button className="log-in-button">Our Bots</button>
-      {/* <button className="sign-up-button">SocraBot</button> */}
+      <button className="log-in-button" onClick={() => router.push('/ChatPage')}>Noobert</button>
+      <button className="sign-up-button" onClick={() => router.push('/SocraChat')}>SocraBot</button>
       <div className="menu-icon" onClick={toggleMenu}>
         <div></div>
         <div></div>

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useRef, useEffect} from 'react';
 import '../styles/Chat.css';
 import ProgressBar from '../components/ProgressBar';
 import ProgressRing from '../components/ProgressRing';
@@ -22,6 +22,8 @@ const SocraChat = () => {
   const [showAnalytics, setShowAnalytics] = useState(false);
   const [isTopicSet, setIsTopicSet] = useState(false);
   const [topic, setTopic] = useState("");
+
+  const feedEndRef = useRef<HTMLDivElement | null>(null);
 
   const clickAnalytics = async () => {
     const analysisRequestMessage = {
@@ -126,6 +128,11 @@ const SocraChat = () => {
     setInput('');
   };
   
+
+  useEffect(() => {
+    feedEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
   const averageProgress: number = parseFloat(((logicalCoherence + reflectionInsight + responseQuality + conceptualClarity) / 4).toFixed(1));
 
   return (
@@ -189,6 +196,7 @@ const SocraChat = () => {
               )}
             </div>
           ))}
+          <div ref={feedEndRef} />
         </ul>
         <form className="bottom-section" onSubmit={handleSubmit}>
           {loading && <div className="loading-dots"><span>.</span><span>.</span><span>.</span></div>}
