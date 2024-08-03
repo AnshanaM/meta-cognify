@@ -1,51 +1,66 @@
 # 🌟 MetaCognify
 
-**Hackathon:** Falcon Hackathon by lablab.ai
+**Hackathon:** Falcon Hackathon by lablab.ai  
 **Team:** The Falconers
 
 ## 🚀 Introduction
 
-Created during the 10-day Falcon Hackathon, MetaCognify is an innovative solution dedicated to the education sector. Our project's main goal is to provide students AI-powered methods to strengthen their critical thinking skills and memory.
+MetaCognify is an educational tool developed during the 10-day Falcon Hackathon. It leverages the Falcon 180B model to help students improve critical thinking and memory. The platform offers AI-driven simulations of the Feynman Technique and the Socratic Method, which are effective strategies for enhancing cognitive skills.
 
-MetaCognify utilises the advanced Falcon 180B model to analyze and evaluate student performance. MetaCognify provides two transformative methods: the Feynman Technique and the Socratic Method. These methods, backed by psychological research, are known to significantly enhance critical thinking skills. MetaCognify offers an AI simulation of these methods to boost critical thinking and knowledge retention.
+## Self-Study Techniques
 
-## Basic Idea About the Self-Study Techniques
+- **Feynman Technique:** Simplify complex concepts as if teaching a beginner. This method helps in identifying gaps in understanding and reinforcing knowledge through simplification and analogy.
 
-- The Feynman Technique: Named after the Nobel Prize-winning physicist Richard Feynman, this method involves explaining a concept in simple terms as if teaching it to a beginner. It helps identify gaps in understanding and reinforces knowledge through simplification and analogy. Feynman was renowned for his ability to break down complex topics into understandable pieces, making this technique a powerful tool for deep learning.
-
-- The Socratic Method: Originating from the classical Greek philosopher Socrates, this approach uses a taxonomy of guided questions to stimulate critical thinking and illuminate ideas. By continually asking "why" and "how," it challenges assumptions and deepens understanding. Socrates employed this technique to engage his students in dialogue, encouraging them to think deeply and question their own beliefs.
+- **Socratic Method:** Engage in guided questioning to challenge assumptions and deepen comprehension. By asking "why" and "how," this technique stimulates critical thinking and encourages deeper exploration of ideas.
 
 ## 🎯 Features
 
-- **AI Simulation of the Feynman Technique 1**:Engage with an AI beginner bot named Noobert, which like its name, acts as a beginner! It prompts you to explain complex concepts in simple terms, boosting deeper understanding of your chosen topic and increases knowledge retention.
-- **AI-Powered Socratic Method**: Interact with AI-driven Socratic dialogues that challenge your reasoning and encourage critical thinking by answering probing questions designed by Socrabot, an AI chatbot designed to perform Socratic questioning.
-- **Performance Metrics and Detailed Feedback**: Both Noobert and Socrabot have the ability to provide feedback on how well you did on the chosen topic - insightful analytics and personalized feedback on your explanations, highlighting areas of strength and opportunities for improvement.
+- **Noobert:** An AI bot that simulates the Feynman Technique. It prompts users to explain topics in simple terms, enhancing understanding and retention.
+- **Socrabot:** An AI bot that employs the Socratic Method. It challenges users with probing questions, promoting critical thinking and reflection.
+- **Feedback & Analytics:** Provides detailed performance metrics and personalized feedback, highlighting strengths and areas for improvement.
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies
 
-- **Frontend**: [React, Javascript etc.]
-- **Backend**: [Next.js, Typescript]
-- **API**: [OpenAI]
+- **Frontend:** React, JavaScript
+- **Backend:** Next.js, TypeScript
+- **API:** OpenAI
 
 ## 📸 Screenshots
 
-| Feature 1                    | Feature 2                    |
-|------------------------------|------------------------------|
+| Noobert Interaction | Socrabot Interaction |
+|---------------------|----------------------|
 | ![Screenshot 1](link_to_screenshot1) | ![Screenshot 2](link_to_screenshot2) |
 
-| Feature 3                    | Feature 4                    |
-|------------------------------|------------------------------|
+| Feedback Analytics  | Overall Dashboard    |
+|---------------------|----------------------|
 | ![Screenshot 3](link_to_screenshot3) | ![Screenshot 4](link_to_screenshot4) |
 
 ## 💡 How It Works
 
-1. **Setup**: [Brief description of the setup process, e.g., installation, dependencies, etc.]
-2. **Running the App**: [Instructions on how to start the app, e.g., commands, environment variables, etc.]
-3. **Using the App**: [Step-by-step guide on how to use the main features]
+1. **Setup:**
+   - Clone the repository:
+     ```bash
+     git clone https://github.com/username/project-name.git
+     cd project-name
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Configure environment variables (if any).
 
-## 📦 Installation
+2. **Running the App:**
+   - Start the development server:
+     ```bash
+     npm run dev
+     ```
+   - Access the app at `http://localhost:3000`.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/username/project-name.git
-   cd project-name
+3. **Using the App:**
+   - **Noobert:** Choose a topic and explain it to Noobert, who will ask questions to clarify and deepen understanding.
+   - **Socrabot:** Engage with Socrabot's questions to explore and reflect on various topics.
+   - **Review Feedback:** Check the analytics dashboard for feedback and insights on your performance.
+
+## 🖱️ Live Demo
+
+   - Access the app at `https://meta-cognify.vercel.app/`.
