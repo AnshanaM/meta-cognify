@@ -17,7 +17,7 @@ MetaCognify is an educational tool developed during the 10-day Falcon Hackathon.
 
 - **Noobert:** An AI bot that simulates the Feynman Technique. It prompts users to explain topics in simple terms, enhancing understanding and retention.
 - **Socrabot:** An AI bot that employs the Socratic Method. It challenges users with probing questions, promoting critical thinking and reflection.
-- **Feedback & Analytics:** Provides detailed performance metrics and personalized feedback, highlighting strengths and areas for improvement.
+- **Feedback & Analytics:** Both bots provide detailed performance metrics and personalized feedback, highlighting strengths and areas for improvement.
 
 ## 🛠️ Technologies
 
